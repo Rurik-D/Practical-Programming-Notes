@@ -18,7 +18,7 @@ I apologize to anyone who doesn't speak italian.
  
  ---
  
- ## LICENSE
+ ## LICENZA
  
  Questi appunti sono di libero utilizzo, chiunque può scaricarli e/o modificarli. Chiedo gentilmente che la condivisione avvenga tramite [questo link](https://github.com/Rurik-D/University-notes), o che comunque si faccia riferimento a chi li ha scritti.
  Ad ogni modo potrete trovare inormazioni sulla licenza utilizzata [qui](https://github.com/Rurik-D/University-notes/blob/main/LICENSE)
