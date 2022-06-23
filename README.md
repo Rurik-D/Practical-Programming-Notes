@@ -11,10 +11,10 @@ I apologize to anyone who doesn't speak italian.
 
 ---
 
- Materia         | Appunti | Esercizi | Stato
------------------|---------|----------|-------------
- Assembly (mips) |   [x]   |   [x]    | Da publicare
- Python          |   [ ]   |   [x]    | Da publicare
+ Materia         | Appunti | Esercizi | Stato        | Ultimo aggiornamento
+-----------------|---------|----------|------------- |----------------------
+ Assembly (mips) |   [x]   |   [x]    | Da publicare | Mai
+ Python          |   [ ]   |   [x]    | Da publicare | 23/06/22
  
  ---
  
