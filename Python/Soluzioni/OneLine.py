@@ -32,7 +32,7 @@ Scrivere una funzione che sommi i valori pari di una lista se il loro valore ass
 """
 
 def es1(lista):
-    return sum(list(filter(lambda y : ((abs(y) ** 3)//2) % 3 == 0, filter(lambda x : x % 2 == 0, l))))
+    return sum(list(filter(lambda y : ((abs(y) ** 3)//2) % 3 == 0, filter(lambda x : x % 2 == 0, lista))))
     pass
 
 # print(es1([2, 5, 7, 8, 4, 12, 6]))      # OUT: 18
@@ -59,7 +59,9 @@ Scrivere una funzione che, data una stringa, ne elimini la punteggiatura e ritor
 """
 
 def es3(stringa):
-    return list((len(list(filter(lambda x : x not in ("a","e","i","o","u"), stringa.translate(str.maketrans("",""," ,?!.")).lower()))), len(list(filter(lambda y : y in ("a","e","i","o","u"), stringa.translate(str.maketrans("",""," ,.!?")).lower())))))
+    return tuple((len(list(filter(lambda x : x in ("a","e","i","o","u"), stringa.translate(str.maketrans("",""," ,?!.;:()[]}{")).lower()))), len(list(filter(lambda y : y not in ("a","e","i","o","u"), stringa.translate(str.maketrans("",""," ,.:;!?()[]}{")).lower())))))
+
+print(es3("Hello world!(con molta fantasia :))."))
 
 
 
@@ -91,6 +93,7 @@ def es5(lista1, lista2):
 
 
 #%%
+import random
 """ ES 6 - medio/difficile
 Scrivere una funzione che, date due liste di interi, ritorni una lista contenente i quadrati dei valori assoluti maggiori di 10 della 
 divisione dei multipli di 3.
@@ -99,18 +102,19 @@ divisione dei multipli di 3.
 def es6(lista1, lista2):
     return list(map(lambda j : abs(j) ** 2 , filter(lambda w : w > 10, filter(lambda x : x % 3 == 0, map(lambda y, z : z // y, filter(lambda m : m != 0, lista1), filter(lambda n : n != 0, lista2))))))                                               
 
-import random
 
 
-x =[]
+"""
+x = []
 for i in range(1500):
     x.append(random.randint(-20, 40))
 
-y =[]
+y = []
 for i in range(1500):
     y.append(random.randint(-20, 40))
 
 print(es6(x, y))
+"""
 
 
 

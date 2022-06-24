@@ -43,6 +43,7 @@ def es1(lista):
 #%%
 """ ES 2 - facile
 Scrivere una funzione che prenda in input una lista di stringhe e restituisca una nuova lista contenente solo le stringhe palindrome della lista iniziale.
+(non sono considerati spazi, punteggiature e differenza tra maiuscole e minuscole)
 """
 
 def es2(lista):
@@ -65,6 +66,7 @@ def es3(stringa):
 
 
 
+
 #%%
 """ ES 4 - medio
 Scrivere una funzione che sommi due numeri solo se positivi e divisibili per 2, altrimenti ne faccia la sottrazione.
@@ -74,7 +76,7 @@ def es4(num1, num2):
     #Inserisci qui il tuo codice
     pass
 
-# print(es4(20, 24))                      # OUT: 44
+# print(es4(20, 24))                      # OUT: 44['abba', 'Erano usi suonare.', 'a bCcBa']
 # print(es4(21, 24))                      # OUT: -3
 # print(es4(-20, 24))                     # OUT: -44
 
@@ -93,6 +95,7 @@ def es5(lista1, lista2):
 
 
 #%%
+import random
 """ ES 6 - medio/difficile
 Scrivere una funzione che, date due liste di interi, ritorni una lista contenente i quadrati dei valori assoluti maggiori di 10 della 
 divisione dei multipli di 3.
@@ -101,6 +104,20 @@ divisione dei multipli di 3.
 def es6(lista1, lista2):
     #Inserisci qui il tuo codice
     pass
+
+
+
+"""
+x = []
+for i in range(1500):
+    x.append(random.randint(-20, 40))
+
+y = []
+for i in range(1500):
+    y.append(random.randint(-20, 40))
+
+print(es6(x, y))
+"""
 
 
 
@@ -144,7 +161,5 @@ out:
 def es8(a, b):
     #Inserisci qui il tuo codice
     pass
-
-
 
 
