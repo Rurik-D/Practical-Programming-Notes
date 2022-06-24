@@ -14,6 +14,8 @@ Tanto vi dovevo e tanto v'ho detto, detto ciò in bocca al lupo!
 """
 
 
+
+
 #%%
 """ ES 0 - banale
 Scrivere una funzione che data una lista di interi, ritorni una lista dove ogni valore della lista iniziale è stato sommato con il precedente (eccetto il primo).
@@ -23,6 +25,7 @@ def es0(lista):
     return list(map(lambda i : lista[i-1] + lista[i], range(1, len(lista))))
 
 # print(es0([-3, 6, 12, -5, 8, 19, -9]))    # OUT: [3, 18, 7, 3, 27, 10]
+
 
 
 
@@ -39,6 +42,7 @@ def es1(lista):
 
 
 
+
 #%%
 """ ES 2 - facile
 Scrivere una funzione che prenda in input una lista di stringhe e restituisca una nuova lista contenente solo le stringhe palindrome della lista iniziale.
@@ -52,6 +56,7 @@ def es2(lista):
 
 
 
+
 #%%
 """ ES 3 - medio
 Scrivere una funzione che, data una stringa, ne elimini la punteggiatura e ritorni una tupla tale che:
@@ -61,7 +66,7 @@ Scrivere una funzione che, data una stringa, ne elimini la punteggiatura e ritor
 def es3(stringa):
     return tuple((len(list(filter(lambda x : x in ("a","e","i","o","u"), stringa.translate(str.maketrans("",""," ,?!.;:()[]}{")).lower()))), len(list(filter(lambda y : y not in ("a","e","i","o","u"), stringa.translate(str.maketrans("",""," ,.:;!?()[]}{")).lower())))))
 
-print(es3("Hello world!(con molta fantasia :))."))
+# print(es3("Hello world!(con molta fantasia :))."))          # OUT: (10, 16)
 
 
 
@@ -80,6 +85,7 @@ def es4(num1, num2):
 
 
 
+
 #%%
 """ ES 5 - medio/facile
 Scrivere una funzione che prenda come parametro 2 liste, faccia la moltiplicazione tra gli elementi dello stesso indice e ritorni una 
@@ -87,8 +93,10 @@ lista contenente i valori moltiplicati solo se multipli di 5.
 """
 
 def es5(lista1, lista2):
-    #Inserisci qui il tuo codice
-    pass
+    return list(filter(lambda z : z % 5 == 0, map(lambda x,y: x*y, lista1, lista2)))
+
+# print(es5([1, 3, 6, 5], [5, 7, 10, 9, 4]))     # OUT: [5, 60, 45]
+
 
 
 
@@ -103,7 +111,6 @@ def es6(lista1, lista2):
     return list(map(lambda j : abs(j) ** 2 , filter(lambda w : w > 10, filter(lambda x : x % 3 == 0, map(lambda y, z : z // y, filter(lambda m : m != 0, lista1), filter(lambda n : n != 0, lista2))))))                                               
 
 
-
 """
 x = []
 for i in range(1500):
@@ -115,6 +122,7 @@ for i in range(1500):
 
 print(es6(x, y))
 """
+
 
 
 
@@ -149,6 +157,9 @@ out:
     [24, 30, 36, 48, 12, 48, 6, 18, 24, 36, 42, 6, 24, 54, 12, 18]] 
 """
 
+
+
+
 #%%
 """ ES 8 - 
 
@@ -157,5 +168,6 @@ out:
 def es8(a, b):
     #Inserisci qui il tuo codice
     pass
+
 
 

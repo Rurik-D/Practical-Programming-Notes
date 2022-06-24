@@ -64,6 +64,9 @@ def es3(stringa):
     #Inserisci qui il tuo codice
     pass
 
+# print(es3("Hello world!(con molta fantasia :))."))          # OUT: (10, 16)
+
+
 
 
 
@@ -91,6 +94,10 @@ lista contenente i valori moltiplicati solo se multipli di 5.
 def es5(lista1, lista2):
     #Inserisci qui il tuo codice
     pass
+
+# print(es5([1, 3, 6, 5], [5, 7, 10, 9, 4]))     # OUT: [5, 60, 45]
+
+
 
 
 
