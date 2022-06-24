@@ -23,7 +23,7 @@ def es0(lista):
     #Inserisci qui il tuo codice
     pass
 
-# print(es0([-3, 6, 12, -5, 8, 19, -9]))    # OUT: [3, 18, 7, 3, 27, 10]
+# print(es0([-3, 6, 12, -5, 8, 19, -9]))    # OUT: [-3, 3, 18, 7, 3, 27, 10]
 
 
 

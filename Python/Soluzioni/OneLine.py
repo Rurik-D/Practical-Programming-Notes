@@ -22,9 +22,9 @@ Scrivere una funzione che data una lista di interi, ritorni una lista dove ogni 
 """
 
 def es0(lista):
-    return list(map(lambda i : lista[i-1] + lista[i], range(1, len(lista))))
+    return [lista[0]] + list(map(lambda i : lista[i-1] + lista[i], range(1, len(lista))))
 
-# print(es0([-3, 6, 12, -5, 8, 19, -9]))    # OUT: [3, 18, 7, 3, 27, 10]
+# print(es0([-3, 6, 12, -5, 8, 19, -9]))    # OUT: [-3, 3, 18, 7, 3, 27, 10]
 
 
 
