@@ -14,12 +14,13 @@ I apologize to anyone who doesn't speak italian.
  Materia         | Appunti | Esercizi | Stato        | Ultimo aggiornamento
 -----------------|---------|----------|------------- |----------------------
  Assembly (mips) |   [x]   |   [x]    | Incompleti   | 23/06/22
- Python          |   [ ]   |   [x]    | Incompleti   | 23/06/22
+ Python          |   [ ]   |   [x]    | Incompleti   | 03/07/22
  
  ---
  
  ## LICENZA
  
- Questi appunti sono di libero utilizzo, chiunque può scaricarli e/o modificarli. Chiedo gentilmente che la condivisione avvenga tramite [questo link](https://github.com/Rurik-D/University-notes), o che comunque si faccia riferimento a chi li ha scritti.
- Ad ogni modo potrete trovare inormazioni sulla licenza utilizzata [qui](https://github.com/Rurik-D/University-notes/blob/main/LICENSE)
+ Questi appunti sono di libero utilizzo, chiunque può scaricarli e/o modificarli.    
+ Chiedo gentilmente che la condivisione avvenga tramite [questo link](https://github.com/Rurik-D/University-notes), o che comunque si faccia riferimento a chi li ha scritti.   
+ Ad ogni modo potrete trovare inormazioni sulla licenza utilizzata [qui](https://github.com/Rurik-D/University-notes/blob/main/LICENSE).
  
