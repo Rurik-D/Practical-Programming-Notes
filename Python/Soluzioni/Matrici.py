@@ -34,25 +34,26 @@ def es1(lista):
     matrice = [['#' for i in range(4)] for j in range(4)]
     altezza = len(matrice)
     larghezza = len(matrice[0])
-    for elemento in lista:
-        x = elemento[0]
-        y = elemento[1]
-        k = elemento[2]
+    for tupla in lista:
+        x = tupla[0]
+        y = tupla[1]
+        k = tupla[2]
         if 0 <= x < larghezza and 0 <= y < altezza:
             matrice[y][x] = k
     return matrice
 
-print(es1([(2, 3, "þ"), (0, 1, '←'), (1, 4, '╦'), (3, 2, '♠')]))
-# OUT:
-#            [['#', '#', '#', '#'], 
-#             ['←', '#', '#', '#'], 
-#             ['#', '#', '#', '♠'], 
-#             ['#', '#', 'þ', '#']]
+# print(es1([(2, 3, 'þ'), (0, 1, '←'), (1, 4, '╦'), (3, 2, '♠')]))
+
+# OUT:          0    1    2    3
+#          0 [['#', '#', '#', '#'], 
+#          1  ['←', '#', '#', '#'], 
+#          2  ['#', '#', '#', '♠'], 
+#          3  ['#', '#', 'þ', '#']]
 
 
 
 #%%
-""" ES 2 -
+""" ES 2 - medio/facile
 Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzionale:
     Le tuple possono contenere un quarto valore 'origine' che indichi il punto di origine della matrice, che di default è in alto a sinistra.
     Questo parametro può essere solo uno di tra 4:
@@ -62,10 +63,40 @@ Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzional
         - DR    'DOWN-RIGHT'
     Se il parametro non è presente viene contato l'ultimo quarto valore presente in una tupla precedente (se il valore di origine non è stato alterato
     lo si consideri UL). Se viene passato un valore origine non pertinente la tupla non va considerata.
+    Nella lista d'esempio, la terza tupla va ignorata, di consequenza anche il la modifica dell'origine va ignorata.
 """
 
-def es2():
-    return 
+def es2(lista):
+    matrice = [['#' for i in range(4)] for j in range(4)]
+    altezza = len(matrice) - 1
+    larghezza = len(matrice[0]) - 1
+    origine = "UL"
+    for tupla in lista:
+        x = tupla[0]
+        y = tupla[1]
+        k = tupla[2]
+        if 0 <= x <= larghezza and 0 <= y <= altezza:
+            if len(tupla) == 4:
+                origine = tupla[3]
+
+            if origine == "UL":
+                matrice[y][x] = k
+            elif origine == "UR":
+                matrice[y][altezza - x] = k
+            elif origine == "DL":
+                matrice[altezza - y][x] = k
+            elif origine == "DR":
+                matrice[altezza - y][altezza - x] = k
+            
+    return matrice
+
+# print(es2([(2, 3, 'þ'), (0, 1, '←', "DL"), (1, 4, '╦', "UR"), (3, 2, '♠'), (0, 0, 'O', "UL"), (0, 0, 'O', "DL"), (0, 0, 'O', "UR"), (0, 0, 'O', "DR")]))
+
+# OUT:
+#            [['O', '#', '#', 'O'], 
+#             ['#', '#', '#', '♠'], 
+#             ['←', '#', '#', '#'], 
+#             ['O', '#', 'þ', 'O']]
 
 
 
