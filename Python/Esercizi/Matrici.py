@@ -74,14 +74,32 @@ def es2(lista):
 
 
 #%%
-""" ES 3 -
+""" ES 3 - medio
+Data in input una matrice di '-', scrivere una funzione che, tramite un ciclo while, consenta di modificare singolarmente ogni elemento della matrice in un
+elemento dato in input (eseguendo una stampa a video della matrice ad ogni iterazione). Tramite terminale bisognerà poter scrivere le coordinate e l'elemento 
+nel quale modificare il '-'. Se si tenterà di modificare un elemento già modificato, verrà invece modificato il primo elemento successivo non modificato 
+(spostandosi quindi verso destra nella matrice). Se tutti gli elementi sono già stati modificati si mandi un messaggio di errore e si chiuda il programma.
+Gestire tutti i possibili errori che potrebbero generarsi.
+(impostare subito una condizione di uscita dal while, per evitare di creare un ciclo infinito)
 
+Esempio:
+
+    Input:                 -
+        coordintate = 2, 0  | -> 9 volte
+        nuovo valore = X    |
+                           -
+
+    Output:
+        - - -   - - X   - - X   - - X   - - X   - - X   - - X   - - X   X - X   X X X   
+        - - -   - - -   X - -   X X -   X X X   X X X   X X X   X X X   X X X   X X X   Matrice piena!
+        - - -   - - -   - - -   - - -   - - -   X - -   X X -   X X X   X X X   X X X   
 """
 
 def es3():
-    return 
+    #Inserisci qui il tuo codice
+    pass
 
-
+# es3([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
 #%%
 """ ES 4 -
@@ -89,4 +107,5 @@ def es3():
 """
 
 def es4():
-    return 
+    #Inserisci qui il tuo codice
+    pass

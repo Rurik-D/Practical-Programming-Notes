@@ -1,7 +1,11 @@
 """
 Autor: Rurik
 
-Per i seguenti esercizi, a meno che non sia definito diversamente dall'esercizio, si utilizzino matrici composte da liste di liste
+Per i seguenti esercizi, a meno che non sia definito diversamente dall'esercizio, si utilizzano matrici composte da liste di liste.
+
+Conoscenze richieste:
+    - Manipolazione di liste e tuple
+    - Manipolazione delle stringhe
 """
 
 
@@ -101,14 +105,101 @@ def es2(lista):
 
 
 #%%
-""" ES 3 -
+""" ES 3 - medio
+Data in input una matrice di '-', scrivere una funzione che, tramite un ciclo while, consenta di modificare singolarmente ogni elemento della matrice in un
+elemento dato in input (eseguendo una stampa a video della matrice ad ogni iterazione). Tramite terminale bisognerà poter scrivere le coordinate e l'elemento 
+nel quale modificare il '-'. Se si tenterà di modificare un elemento già modificato, verrà invece modificato il primo elemento successivo non modificato 
+(spostandosi quindi verso destra nella matrice). Se tutti gli elementi sono già stati modificati si mandi un messaggio di errore e si chiuda il programma.
+Gestire tutti i possibili errori che potrebbero generarsi.
+(impostare subito una condizione di uscita dal while, per evitare di creare un ciclo infinito)
 
+Esempio:
+
+    Input:                 -
+        coordintate = 2, 0  | -> 9 volte
+        nuovo valore = X    |
+                           -
+
+    Output:
+        - - -   - - X   - - X   - - X   - - X   - - X   - - X   - - X   X - X   X X X   
+        - - -   - - -   X - -   X X -   X X X   X X X   X X X   X X X   X X X   X X X   Matrice piena!
+        - - -   - - -   - - -   - - -   - - -   X - -   X X -   X X X   X X X   X X X   
 """
 
-def es3():
-    return 
+def es3(matrice):
+    ALTEZZA = len(matrice)
+    LARGHEZZA = len(matrice[0])
+
+    print()
+    for y in range(len(matrice)):                                       # stampo la matrice vuota prima del while
+            for x in range(len(matrice[y])):
+                print(matrice[y][x], end = " ")
+            print()
+
+    while True:
+        try:                                                            # Gestisco l'eccezione di ValueError in caso non vengano passati numeri
+            coordinate = tuple(map(int, input("\nInserire coordinate x,y:\n-> ").translate(str.maketrans(",;./", "    ")).split()))
+        except ValueError:
+            print("\nLe coordinate inserite non sono valide!\n")
+            continue
+
+        riga, colonna = coordinate[1], coordinate[0]
+        
+        if not(0 <= riga < ALTEZZA and 0 <= colonna < LARGHEZZA):       # gestisco il caso di OutOfRange
+            print("\nLe coordinate inserite non sono valide!\n")
+            continue
+
+        new_value = input("\nInserire il nuovo valore:\n-> ")
+
+        if matrice[riga][colonna] != '-':                               # se valore occupato cerco valore libero tra i valori successivi
+            for y in range(riga, len(matrice)):
+                if y == riga:
+                    partenza = colonna +1
+                else:
+                    partenza = 0
+                
+                for x in range(partenza, len(matrice[y])):
+                    if matrice[y][x] == '-':
+                        matrice[y][x] = new_value
+                        break
+                else:
+                    continue
+                break
+
+            else:                                                       # cerco valore libero nella sezione precedente
+                if riga == 0:
+                    for x in range(len(matrice[0])):
+                        if matrice[0][x] == '-':
+                            matrice[0][x] = new_value
+                            break
+                    else:                                               # valore libero non trovato nella sezione precedente con riga == 0 (range(0) non effettua iterazioni)
+                        print("\nLa matrice è piena!\n")
+                        break
+
+                else:
+                    for y in range(riga):
+                        for x in range(len(matrice[0])):
+                            if matrice[y][x] == '-':
+                                matrice[y][x] = new_value
+                                break
+                        else:
+                            continue
+                        break
+                    else:                                               # valore libero non trovato nella sezione precedente
+                        print("\nLa matrice è piena!\n")
+                        break
+
+        else:
+            matrice[riga][colonna] = new_value
+
+        print()
+        for y in range(len(matrice)):
+            for x in range(len(matrice[y])):
+                print(matrice[y][x], end = " ")
+            print()
 
 
+es3([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
 #%%
 """ ES 4 -
