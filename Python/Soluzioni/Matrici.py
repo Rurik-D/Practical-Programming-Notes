@@ -210,17 +210,15 @@ Data in input una matrice, si ritorni la somma delle diagonali
 def es4(matrice):
     return 
 
-import random
 
-print(es4([[ 8,  2,  6, -9,  3,  4, -5], 
-           [ 7, -3, -5,  2, -7,  9,  1], 
-           [ 4, -6, -8,  3,  5,  7,  4], 
-           [-1,  7,  3, -6,  9,  5,  5], 
-           [-6,  2,  9,  6, -5, -1,  2], 
-           [ 5, -4, -7, -3,  6,  8, -2], 
-           [-2,  4,  7,  4,  8, -8,  9]]))
+# print(es5([[ 8,  2,  6, -9,  3,  4, -5], 
+#            [ 7, -3, -5,  2, -7,  9,  1], 
+#            [ 4, -6, -8,  3,  5,  7,  4], 
+#            [-1,  7,  3, -6,  9,  5,  5], 
+#            [-6,  2,  9,  6, -5, -1,  2], 
+#            [ 5, -4, -7, -3,  6,  8, -2], 
+#            [-2,  4,  7,  4,  8, -8,  9]]))
 
-print([[random.randint(-9, 9) for x in range(7)] for y in range(7)])
 
 
 #%%
@@ -233,35 +231,169 @@ in caso di parità si ritorni il maggiore.
 def es5(lista1, lista2, matrice):
     return 
 
-print(es4([[ 8,  2,  6, -9,  3,  4, -5], 
-           [ 7, -3, -5,  2, -7,  9,  1], 
-           [ 4, -6, -8,  3,  5,  7,  4], 
-           [-1,  7,  3, -6,  9,  5,  5], 
-           [-6,  2,  9,  6, -5, -1,  2], 
-           [ 5, -4, -7, -3,  6,  8, -2], 
-           [-2,  4,  7,  4,  8, -8,  9]]))
+# print(es5([[ 8,  2,  6, -9,  3,  4, -5], 
+#            [ 7, -3, -5,  2, -7,  9,  1], 
+#            [ 4, -6, -8,  3,  5,  7,  4], 
+#            [-1,  7,  3, -6,  9,  5,  5], 
+#            [-6,  2,  9,  6, -5, -1,  2], 
+#            [ 5, -4, -7, -3,  6,  8, -2], 
+#            [-2,  4,  7,  4,  8, -8,  9]]))
 
 #%%
 """ES 6 - difficile
 Progettiamo il nostro primo gioco sulle matrici!
 La nostra funzione questa volta non riceverà parametri in input e non ritornerà nulla, si svolgerà tutto interamente sul terminale.
-Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad uno spazio bianco. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
+Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad un under score '_'. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
 (al centro della matrice) e potrà spostarsi dentro di essa tramite i classici comandi WASD. Quando il PG attraversa un bordo della matrice, riappare dall'altra parte (effetto PAC-MAN).
 Al disopra della matrice (o dovunque preferiate) dovrà esserci un contatore delle vite del personaggio e un contatore dei punti.
-All'interno dell matrice saranno presenti degli NPC nemici, rappresentati con il carattere '#' che ad od ogni turno si sposteranno in una casella casuale adiacente (non in diagonale).
-Se un NPC entra a contatto con il  nostro PG, (si trovano quindi sulla stessa casella), il PG verrà spostato su una casella adiacente casuale (anche in diagonale) e perderà una vita.
-L'obbiettivo del PG è quello di raccogliere punti '+' in giro per la matrice. Il primo punto apparirà in una posizione casuale diversa da quella del PG e del NPC. I successivi punti
-compariranno sempre in posizioni casuali diverse da quelle del PC e degli NPC (che andranno aumentando ogni 3 punti raccolti, comparendo in caselle casuali diverse da quella del PG, di
-altri NPC e del punto).
+All'interno dell matrice saranno presenti dei nemici, rappresentati con il carattere '#' che ad od ogni turno si sposteranno in una casella casuale adiacente (non in diagonale).
+Se un nemico entra a contatto con il  nostro PG, si trovano quindi sulla stessa casella, il PG  perderà una vita.
+L'obbiettivo del PG è quello di raccogliere punti '+' in giro per la matrice. Il primo punto apparirà in una posizione casuale diversa da quella del PG e del nemico. I successivi punti
+compariranno sempre in posizioni casuali diverse da quelle del PC e dei nemici (che andranno aumentando ogni volta che il punto cambia posizione, comparendo in caselle casuali diverse 
+da quella del PG, di altri NPC e del punto). Anche i nemici posono prendere i punti '+', facendo comparire altri nemici.
 Il gioco va in GAME OVER quando il PG perde tutte e 3 le sue vite.
 
 Per lo svolgimento di questo esercizio consiglio di usare copiare la traccia su uno script vuoto, strutturando il programma su più funzioni con ruoli ben precisi. 
 L'esercizio può essere svolto anche utilizzando la programmazione ad oggetti.
 """
 import random
+from sys import breakpointhook
 
-def es6():
-    pass
+def main():
+    LATO = 11
+    griglia = resetGriglia(LATO)
+    POSIZIONI_TOTALI = [(x, y) for x in range(LATO) for y in range(LATO)]
+    PG = [[5, 5], '@']
+    GAME_OVER = False
+    vite = 3
+    contaPunti = 0
 
-es6()
+    posizioniEscluseNemici = []
+    posizioniEsclusePunto = []
 
+    posizioniEscluseNemici.append(PG[0])
+    nemici = [posizioneCasuale(POSIZIONI_TOTALI, posizioniEscluseNemici), '#']
+
+    posizioniEsclusePunto.append(PG[0])
+    posizioniEsclusePunto.append(nemici[0])
+    punto = [posizioneCasuale(POSIZIONI_TOTALI, posizioniEsclusePunto), '+']
+
+    while True:
+        griglia = aggiornaPosizioni(PG, LATO, griglia, nemici, punto)
+        stampaGriglia(LATO,griglia, vite, contaPunti)
+        if GAME_OVER:
+            break
+        PG = movimento(PG, LATO)
+        for npc in range(len(nemici) - 1):
+            nemX = nemici[npc][0]
+            nemY = nemici[npc][1]
+            nemici[npc] = movimentoCasuale(LATO, nemX, nemY)
+
+        vite, contaPunti, cambiaPosPunto, GAME_OVER = collisioni(PG[0], nemici[:-1], punto[0], vite, contaPunti)
+        if cambiaPosPunto:
+            posizioniEsclusePunto = [PG[0]]
+            for npc in nemici[:-1]:
+                posizioniEsclusePunto.append(npc)
+            punto[0] = posizioneCasuale(POSIZIONI_TOTALI, posizioniEsclusePunto)
+
+            posizioniEscluseNemici = [tuple(PG[0])]
+            posizioniEscluseNemici.append(punto[0])
+            for npc in nemici[:-1]:
+                posizioniEscluseNemici.append(npc)
+            nemici.insert(0, posizioneCasuale(POSIZIONI_TOTALI, posizioniEscluseNemici))
+    
+    print("GAME OVER!")    
+    
+def collisioni(PG, nemici, punto, vite, contaPunti):
+    cambiaPosPunto = False
+    GAME_OVER = False
+    if tuple(PG) == punto:
+        contaPunti += 1
+        cambiaPosPunto = True
+
+    for npc in nemici:
+        if tuple(PG) == npc:
+            vite -= 1
+        if npc == punto:
+            cambiaPosPunto = True
+
+    if vite == 0:
+        GAME_OVER = True
+    return vite, contaPunti, cambiaPosPunto, GAME_OVER
+
+
+def movimento(PG, LATO):
+    m = {'w': lambda coord : coord[1] - 1 if coord[1] - 1 >= 0 else LATO -1,
+         'a': lambda coord : coord[0] - 1 if coord[0] - 1 >= 0 else LATO -1,
+         's': lambda coord : coord[1] + 1 if coord[1] + 1 < LATO else 0,
+         'd': lambda coord : coord[0] + 1 if coord[0] + 1 < LATO else 0}
+
+    asse = {'w': 1,
+            'a': 0,
+            's': 1,
+            'd': 0}
+
+    direzione = input().lower()
+    PG[0][asse.get(direzione, 0)] = m.get(direzione, lambda coord : coord[0])(PG[0])
+    return PG
+
+def resetGriglia(LATO):
+    return [["_" for l in range(LATO)] for h in range(LATO)]
+
+def aggiornaPosizioni(PG, LATO, griglia, nemici, punto):
+    griglia = resetGriglia(LATO)
+    x, y = punto[0][0], punto[0][1]
+    griglia[y][x] = punto[1]
+    x, y = PG[0][0], PG[0][1]
+    griglia[y][x] = PG[1]
+
+    for npc in nemici[:-1]:
+        x, y = npc[0], npc[1]
+        griglia[y][x] = nemici[-1]
+
+    return griglia
+
+def stampaGriglia(LATO, griglia, vite, punti):
+    print(f"\n\nvite = {vite}\tpunti = {punti}")
+    print("-" * (2 * LATO + 3))
+    for riga in range(LATO):
+        print("|", end = " ")
+        for colonna in range(LATO):
+            print(griglia[riga][colonna], end = " ")
+        print("|")
+    print("-" * (2 * LATO + 3))
+
+
+def posizioneCasuale(posTot, posEscluse):
+    posTotTmp = posTot.copy()
+    for posizione in posEscluse:
+        try:
+            posTotTmp.remove(tuple(posizione))
+        except ValueError:
+            continue
+    nuovaPosizione = random.choice(posTotTmp)
+    return nuovaPosizione[0], nuovaPosizione[1]
+
+def movimentoCasuale(LATO, x, y):
+    asse = random.choice(['x', 'y'])
+    movimento = random.choice([-1, 1])
+    if asse == 'x':
+        x += movimento
+        if x >= LATO:
+            x = 0
+        elif x < 0:
+            x = LATO - 1
+
+    else:
+        y += movimento
+        if y >= LATO:
+            y = 0
+        elif y < 0:
+            y = LATO - 1
+
+    return x, y
+
+main()
+
+
+# %%
