@@ -1,7 +1,12 @@
 """
 Autor: Rurik
 
-Per i seguenti esercizi, a meno che non sia definito diversamente dall'esercizio, si utilizzino matrici composte da liste di liste
+Ricordiamo che per matrice si intende un array bidimensionale (array di array) contenente, in ciascun sotto-array, qualsiasi tipo di valore. In python le rappresentiamo come
+liste di liste.
+
+Conoscenze richieste:
+    - Manipolazione delle strutture dati
+    - Manipolazione delle stringhe
 """
 
 
@@ -19,6 +24,7 @@ def es0(h, l, k):
 # OUT:   [['#', '#', '#'], 
 #         ['#', '#', '#'], 
 #         ['#', '#', '#']]
+
 
 
 
@@ -42,6 +48,7 @@ def es1(lista):
 #          1  ['←', '#', '#', '#'], 
 #          2  ['#', '#', '#', '♠'], 
 #          3  ['#', '#', 'þ', '#']]
+
 
 
 
@@ -70,6 +77,7 @@ def es2(lista):
 #             ['#', '#', '#', '♠'], 
 #             ['←', '#', '#', '#'], 
 #             ['O', '#', 'þ', 'O']]
+
 
 
 
@@ -102,10 +110,67 @@ def es3():
 # es3([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
 #%%
-""" ES 4 -
-
+""" ES 4 - medio/facile
+Data in input una matrice, si ritorni la somma delle diagonali
 """
 
-def es4():
-    #Inserisci qui il tuo codice
+def es4(matrice):
+    return 
+
+
+
+# print(es4([[ 8,  2,  6, -9,  3,  4, -5], 
+#            [ 7, -3, -5,  2, -7,  9,  1], 
+#            [ 4, -6, -8,  3,  5,  7,  4], 
+#            [-1,  7,  3, -6,  9,  5,  5], 
+#            [-6,  2,  9,  6, -5, -1,  2], 
+#            [ 5, -4, -7, -3,  6,  8, -2], 
+#            [-2,  4,  7,  4,  8, -8,  9]]))
+
+
+
+
+#%%
+""" ES 5 - medio
+Data in input una matrice, si sommino i bordi della matrice. Ogni elemento deve essere sommato con i precedenti, partedo dal vertice in alto a sinistra e facendo una roatazione oraria
+sui 4 bordi della matrice. L'ultima somma dovrà quindi avvenire sull'elemento (0,1). Si ritorni la matrice modificata e il valore che, lungo i bordi, è stato incontrato più di frequente,
+in caso di parità si ritorni il maggiore.
+"""
+
+def es5(lista1, lista2, matrice):
+    return 
+
+# print(es5([[ 8,  2,  6, -9,  3,  4, -5], 
+#            [ 7, -3, -5,  2, -7,  9,  1], 
+#            [ 4, -6, -8,  3,  5,  7,  4], 
+#            [-1,  7,  3, -6,  9,  5,  5], 
+#            [-6,  2,  9,  6, -5, -1,  2], 
+#            [ 5, -4, -7, -3,  6,  8, -2], 
+#            [-2,  4,  7,  4,  8, -8,  9]]))
+
+
+
+
+#%%
+"""ES 6 - difficile
+Progettiamo il nostro primo gioco sulle matrici!
+La nostra funzione questa volta non riceverà parametri in input e non ritornerà nulla, si svolgerà tutto interamente sul terminale.
+Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad uno spazio bianco. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
+(al centro della matrice) e potrà spostarsi dentro di essa tramite i classici comandi WASD. Quando il PG attraversa un bordo della matrice, riappare dall'altra parte (effetto PAC-MAN).
+Al disopra della matrice (o dovunque preferiate) dovrà esserci un contatore delle vite del personaggio e un contatore dei punti.
+All'interno dell matrice saranno presenti degli NPC nemici, rappresentati con il carattere '#' che ad od ogni turno si sposteranno in una casella casuale adiacente (non in diagonale).
+Se un NPC entra a contatto con il  nostro PG, (si trovano quindi sulla stessa casella), il PG verrà spostato su una casella adiacente casuale (anche in diagonale) e perderà una vita.
+L'obbiettivo del PG è quello di raccogliere punti '+' in giro per la matrice. Il primo punto apparirà in una posizione casuale diversa da quella del PG e del NPC. I successivi punti
+compariranno sempre in posizioni casuali diverse da quelle del PC e degli NPC (che andranno aumentando ogni 3 punti raccolti, comparendo in caselle casuali diverse da quella del PG, di
+altri NPC e del punto).
+Il gioco va in GAME OVER quando il PG perde tutte e 3 le sue vite.
+
+Per lo svolgimento di questo esercizio consiglio di usare copiare la traccia su uno script vuoto, strutturando il programma su più funzioni con ruoli ben precisi. 
+L'esercizio può essere svolto anche utilizzando la programmazione ad oggetti.
+"""
+import random
+
+def es6():
     pass
+
+es6()
