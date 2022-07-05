@@ -91,6 +91,42 @@ def es2(matrice):
 
 #%%
 """ ES 3 - medio/facile
+Date 2 matrici 4x4 di interi, sommare i valori con stesse coordinate e salvare i risultati in una matrice 8x2 da ritornare.
+"""
+def es3(matrice1, matrice2):
+    larghezza = 8
+    altezza = 2
+    matriceOut = [[0 for x in range(larghezza)] for y in range(altezza)]
+    xOut = 0
+    yOut = 0
+    for riga in range(len(matrice1)):
+        for colonna in range(len(matrice1[0])):
+            matriceOut[yOut][xOut] = matrice1[riga][colonna] + matrice2[riga][colonna]
+            xOut += 1
+            if xOut == larghezza:
+                xOut = 0
+                yOut += 1
+    return matriceOut
+
+
+
+# print(es3([[4, 2, 3, 4],           # OUT :
+#            [3, 1, 3, 4],           #   [[6, 7, 12, 6, 9, 2, 10, 13],
+#            [6, 8, 3, 2],           #    [8, 10, 4, 8, 10, 8, 8, 10]]
+#            [2, 4, 3, 3]],
+#             
+#           [[2, 5, 9, 2], 
+#            [6, 1, 7, 9], 
+#            [2, 2, 1, 6], 
+#            [8, 4, 5, 7]]))
+
+
+
+
+
+
+#%%
+""" ES 4 - medio/facile
 Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzionale:
     Le tuple possono contenere un quarto valore 'origine' che indichi il punto di origine della matrice, che di default è in alto a sinistra.
     Questo parametro può essere solo uno di tra 4:
@@ -103,7 +139,7 @@ Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzional
     Nella lista d'esempio, la terza tupla va ignorata, di consequenza anche il la modifica dell'origine va ignorata.
 """
 
-def es3(lista):
+def es4(lista):
     matrice = [['#' for i in range(4)] for j in range(4)]
     altezza = len(matrice) - 1
     larghezza = len(matrice[0]) - 1
@@ -127,7 +163,7 @@ def es3(lista):
             
     return matrice
 
-# print(es3([(2, 3, 'þ'), (0, 1, '←', "DL"), (1, 4, '╦', "UR"), (3, 2, '♠'), (0, 0, 'O', "UL"), (0, 0, 'O', "DL"), (0, 0, 'O', "UR"), (0, 0, 'O', "DR")]))
+# print(es4([(2, 3, 'þ'), (0, 1, '←', "DL"), (1, 4, '╦', "UR"), (3, 2, '♠'), (0, 0, 'O', "UL"), (0, 0, 'O', "DL"), (0, 0, 'O', "UR"), (0, 0, 'O', "DR")]))
 
 # OUT:
 #            [['O', '#', '#', 'O'], 
@@ -139,7 +175,7 @@ def es3(lista):
 
 
 #%%
-""" ES 4 - medio
+""" ES 5 - medio
 Data in input una matrice di '-', scrivere una funzione che, tramite un ciclo while, consenta di modificare singolarmente ogni elemento della matrice in un
 elemento dato in input (eseguendo una stampa a video della matrice ad ogni iterazione). Tramite terminale bisognerà poter scrivere le coordinate e l'elemento 
 nel quale modificare il '-'. Se si tenterà di modificare un elemento già modificato, verrà invece modificato il primo elemento successivo non modificato 
@@ -160,7 +196,7 @@ Esempio:
         - - -   - - -   - - -   - - -   - - -   X - -   X X -   X X X   X X X   X X X   
 """
 
-def es4(matrice):
+def es5(matrice):
     ALTEZZA = len(matrice)
     LARGHEZZA = len(matrice[0])
 
@@ -233,18 +269,18 @@ def es4(matrice):
             print()
 
 
-# es4([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
+# es5([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
 
 
 
 #%%
-""" ES 5 - medio
+""" ES 6 - medio
 Data in input una matrice, si sommi ogni elemento con il precedente, seguendo una spirale che parte dall'origine e gira in senso orario. Si ritorni la matrice modificata e il 
 valore che, lungo la spirale, è stato calcolato più di frequente, in caso di parità si ritorni il valore maggiore.
 """
 
-def es5(matrice):
+def es6(matrice):
     riga = 0
     colonna = 0
     run = True
@@ -306,7 +342,7 @@ def es5(matrice):
     SOMMA_MAGGIORE = sommeFinali[0][0]
     return matrice, SOMMA_MAGGIORE
 
-# print(es5([[ 8,  2,  6, -9,  3,  4, -5],        # OUT : [[8,  10, 16, 7,  10, 14, 9],
+# print(es6([[ 8,  2,  6, -9,  3,  4, -5],        # OUT : [[8,  10, 16, 7,  10, 14, 9],
 #            [ 7, -3, -5,  2, -7,  9,  1],        #        [50, 47, 42, 44, 37, 46, 10],
 #            [ 4, -6, -8,  3,  5,  7,  4],        #        [43, 60, 52, 55, 60, 53, 14], 
 #            [-1,  7,  3, -6,  9,  5,  5],        #        [39, 66, 82, 76, 69, 58, 19],
@@ -318,7 +354,7 @@ def es5(matrice):
 
 
 #%%
-"""ES 6 - difficile
+"""ES 7 - difficile
 Progettiamo il nostro primo gioco sulle matrici!
 La nostra funzione questa volta non riceverà parametri in input e non ritornerà nulla, si svolgerà tutto interamente sul terminale.
 Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad un under score '_'. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
@@ -471,4 +507,4 @@ def movimentoCasuale(LATO, x, y):                                               
 
     return x, y
 
-main()
+# main()
