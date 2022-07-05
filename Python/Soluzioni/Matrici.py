@@ -105,8 +105,39 @@ def es2(lista):
 
 
 
+
 #%%
-""" ES 3 - medio
+""" ES 3 - medio/facile
+Data in input una matrice (quadrata), si ritorni la somma delle diagonali
+"""
+
+def es3(matrice):
+    somma = 0
+    i, j = 0, len(matrice[0]) - 1
+
+    for riga in matrice:
+        somma += riga[i] + riga[j]
+        i += 1
+        j -= 1
+
+    return somma
+
+
+# print(es3([[ 8,  2,  6, -9,  3,  4, -5], 
+#            [ 7, -3, -5,  2, -7,  9,  1], 
+#            [ 4, -6, -8,  3,  5,  7,  4], 
+#            [-1,  7,  3, -6,  9,  5,  5], 
+#            [-6,  2,  9,  6, -5, -1,  2], 
+#            [ 5, -4, -7, -3,  6,  8, -2], 
+#            [-2,  4,  7,  4,  8, -8,  9]]))
+
+# OUTPUT : 9
+
+
+
+
+#%%
+""" ES 4 - medio
 Data in input una matrice di '-', scrivere una funzione che, tramite un ciclo while, consenta di modificare singolarmente ogni elemento della matrice in un
 elemento dato in input (eseguendo una stampa a video della matrice ad ogni iterazione). Tramite terminale bisognerà poter scrivere le coordinate e l'elemento 
 nel quale modificare il '-'. Se si tenterà di modificare un elemento già modificato, verrà invece modificato il primo elemento successivo non modificato 
@@ -127,7 +158,7 @@ Esempio:
         - - -   - - -   - - -   - - -   - - -   X - -   X X -   X X X   X X X   X X X   
 """
 
-def es3(matrice):
+def es4(matrice):
     ALTEZZA = len(matrice)
     LARGHEZZA = len(matrice[0])
 
@@ -200,44 +231,87 @@ def es3(matrice):
             print()
 
 
-# es3([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
-
-#%%
-""" ES 4 - medio/facile
-Data in input una matrice, si ritorni la somma delle diagonali
-"""
-
-def es4(matrice):
-    return 
-
-
-# print(es5([[ 8,  2,  6, -9,  3,  4, -5], 
-#            [ 7, -3, -5,  2, -7,  9,  1], 
-#            [ 4, -6, -8,  3,  5,  7,  4], 
-#            [-1,  7,  3, -6,  9,  5,  5], 
-#            [-6,  2,  9,  6, -5, -1,  2], 
-#            [ 5, -4, -7, -3,  6,  8, -2], 
-#            [-2,  4,  7,  4,  8, -8,  9]]))
-
+# es4([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
 
 #%%
 """ ES 5 - medio
-Data in input una matrice, si sommino i bordi della matrice. Ogni elemento deve essere sommato con i precedenti, partedo dal vertice in alto a sinistra e facendo una roatazione oraria
-sui 4 bordi della matrice. L'ultima somma dovrà quindi avvenire sull'elemento (0,1). Si ritorni la matrice modificata e il valore che, lungo i bordi, è stato incontrato più di frequente,
-in caso di parità si ritorni il maggiore.
+Data in input una matrice, si sommi ogni elemento con il precedente, seguendo una spirale che parte dall'origine e gira in senso orario. Si ritorni la matrice modificata e il 
+valore che, lungo la spirale, è stato calcolato più di frequente, in caso di parità si ritorni il valore maggiore.
 """
 
-def es5(lista1, lista2, matrice):
-    return 
+def es5(matrice):
+    riga = 0
+    colonna = 0
+    run = True
+    somme = {}
 
-# print(es5([[ 8,  2,  6, -9,  3,  4, -5], 
-#            [ 7, -3, -5,  2, -7,  9,  1], 
-#            [ 4, -6, -8,  3,  5,  7,  4], 
-#            [-1,  7,  3, -6,  9,  5,  5], 
-#            [-6,  2,  9,  6, -5, -1,  2], 
-#            [ 5, -4, -7, -3,  6,  8, -2], 
-#            [-2,  4,  7,  4,  8, -8,  9]]))
+    bordoSup, bordoDx, bordoInf, bordoSx = 0, len(matrice[0]) - 1, len(matrice) - 1, 0
+    faseSup, faseDx, faseInf, faseSx = True, False, False, False
+
+
+    while run:
+        run = False
+        if faseSup and colonna + 1 <= bordoDx:
+            run = True
+            colonna += 1
+            matrice[riga][colonna] += matrice[riga][colonna-1]
+            valore = matrice[riga][colonna]
+            somme[valore] = somme.get(valore, 0) + 1
+
+            if colonna == bordoDx:
+                faseSup, faseDx = False, True
+                bordoSup += 1
+
+        elif faseDx and riga + 1 <= bordoInf:
+            run = True
+            riga += 1
+            matrice[riga][colonna] += matrice[riga-1][colonna]
+            valore = matrice[riga][colonna]
+            somme[valore] = somme.get(valore, 0) + 1
+
+            if riga == bordoInf:
+                faseDx, faseInf = False, True
+                bordoDx -= 1
+
+        elif faseInf and colonna - 1 >= bordoSx:
+            run = True
+            colonna -= 1
+            matrice[riga][colonna] += matrice[riga][colonna+1]
+            valore = matrice[riga][colonna]
+            somme[valore] = somme.get(valore, 0) + 1
+
+            if colonna == bordoSx:
+                faseInf, faseSx = False, True
+                bordoInf -= 1
+
+        elif faseSx and riga - 1 >= bordoSup:
+            run = True
+            riga -= 1
+            matrice[riga][colonna] += matrice[riga+1][colonna]
+            valore = matrice[riga][colonna]
+            somme[valore] = somme.get(valore, 0) + 1
+
+            if riga == bordoSup:
+                faseSx, faseSup = False, True
+                bordoSx += 1
+
+    sommeFinali = list(somme.items())
+    sommeFinali.sort(key = lambda x : x[0], reverse = True)
+    sommeFinali.sort(key = lambda x : x[1], reverse = True)
+    SOMMA_MAGGIORE = sommeFinali[0][0]
+    return matrice, SOMMA_MAGGIORE
+
+print(es5([[ 8,  2,  6, -9,  3,  4, -5],        # OUT : [[8,  10, 16, 7,  10, 14, 9],
+           [ 7, -3, -5,  2, -7,  9,  1],        #        [50, 47, 42, 44, 37, 46, 10],
+           [ 4, -6, -8,  3,  5,  7,  4],        #        [43, 60, 52, 55, 60, 53, 14], 
+           [-1,  7,  3, -6,  9,  5,  5],        #        [39, 66, 82, 76, 69, 58, 19],
+           [-6,  2,  9,  6, -5, -1,  2],        #        [40, 59, 79, 70, 64, 57, 21],
+           [ 5, -4, -7, -3,  6,  8, -2],        #        [46, 57, 61, 68, 71, 65, 19],
+           [-2,  4,  7,  4,  8, -8,  9]]))      #        [41, 43, 39, 32, 28, 20, 28]] , 10
+
+
+
 
 #%%
 """ES 6 - difficile
@@ -257,14 +331,13 @@ Per lo svolgimento di questo esercizio consiglio di usare copiare la traccia su 
 L'esercizio può essere svolto anche utilizzando la programmazione ad oggetti.
 """
 import random
-from sys import breakpointhook
 
 def main():
     LATO = 11
-    griglia = resetGriglia(LATO)
     POSIZIONI_TOTALI = [(x, y) for x in range(LATO) for y in range(LATO)]
     PG = [[5, 5], '@']
     GAME_OVER = False
+    griglia = resetGriglia(LATO)
     vite = 3
     contaPunti = 0
 
@@ -280,7 +353,7 @@ def main():
 
     while True:
         griglia = aggiornaPosizioni(PG, LATO, griglia, nemici, punto)
-        stampaGriglia(LATO,griglia, vite, contaPunti)
+        stampaGriglia(LATO,griglia, vite, contaPunti, nemici[:-1])
         if GAME_OVER:
             break
         PG = movimento(PG, LATO)
@@ -307,23 +380,23 @@ def main():
 def collisioni(PG, nemici, punto, vite, contaPunti):
     cambiaPosPunto = False
     GAME_OVER = False
-    if tuple(PG) == punto:
+    if tuple(PG) == punto:                                                                                  # collisione giocatore/punto
         contaPunti += 1
         cambiaPosPunto = True
 
     for npc in nemici:
-        if tuple(PG) == npc:
+        if tuple(PG) == npc:                                                                                # collisione nemico/giocatore
             vite -= 1
-        if npc == punto:
+        if npc == punto:                                                                                    # collisione nemico/punto
             cambiaPosPunto = True
 
-    if vite == 0:
+    if vite <= 0:
         GAME_OVER = True
     return vite, contaPunti, cambiaPosPunto, GAME_OVER
 
 
-def movimento(PG, LATO):
-    m = {'w': lambda coord : coord[1] - 1 if coord[1] - 1 >= 0 else LATO -1,
+def movimento(PG, LATO):                                                                                    # movimento del personaggio con risoluzione "effetto PAC-MAN"
+    m = {'w': lambda coord : coord[1] - 1 if coord[1] - 1 >= 0 else LATO -1,                                # se la posizione è valida, allora muovi, altrimenti effetto PAC-MAN
          'a': lambda coord : coord[0] - 1 if coord[0] - 1 >= 0 else LATO -1,
          's': lambda coord : coord[1] + 1 if coord[1] + 1 < LATO else 0,
          'd': lambda coord : coord[0] + 1 if coord[0] + 1 < LATO else 0}
@@ -334,13 +407,13 @@ def movimento(PG, LATO):
             'd': 0}
 
     direzione = input().lower()
-    PG[0][asse.get(direzione, 0)] = m.get(direzione, lambda coord : coord[0])(PG[0])
+    PG[0][asse.get(direzione, 0)] = m.get(direzione, lambda coord : coord[0])(PG[0])                        # se il comando immesso non è valido il personaggio resta fermo
     return PG
 
-def resetGriglia(LATO):
+def resetGriglia(LATO):                                                                                     # refresh della griglia
     return [["_" for l in range(LATO)] for h in range(LATO)]
 
-def aggiornaPosizioni(PG, LATO, griglia, nemici, punto):
+def aggiornaPosizioni(PG, LATO, griglia, nemici, punto):                                                    # refresh della griglia + aggiornamento di tutte le posizioni
     griglia = resetGriglia(LATO)
     x, y = punto[0][0], punto[0][1]
     griglia[y][x] = punto[1]
@@ -353,8 +426,8 @@ def aggiornaPosizioni(PG, LATO, griglia, nemici, punto):
 
     return griglia
 
-def stampaGriglia(LATO, griglia, vite, punti):
-    print(f"\n\nvite = {vite}\tpunti = {punti}")
+def stampaGriglia(LATO, griglia, vite, punti, nemici):                                                      # stampo griglia con bordi, vite, punti e numero nemici
+    print(f"\n\nvite : {vite}\tpunti : {punti}")
     print("-" * (2 * LATO + 3))
     for riga in range(LATO):
         print("|", end = " ")
@@ -362,9 +435,10 @@ def stampaGriglia(LATO, griglia, vite, punti):
             print(griglia[riga][colonna], end = " ")
         print("|")
     print("-" * (2 * LATO + 3))
+    print(f"nemici : {len(nemici)}")
 
 
-def posizioneCasuale(posTot, posEscluse):
+def posizioneCasuale(posTot, posEscluse):                                                                   # spawn nemici e punti, escluse posizioni occupate da altri oggetti
     posTotTmp = posTot.copy()
     for posizione in posEscluse:
         try:
@@ -374,7 +448,7 @@ def posizioneCasuale(posTot, posEscluse):
     nuovaPosizione = random.choice(posTotTmp)
     return nuovaPosizione[0], nuovaPosizione[1]
 
-def movimentoCasuale(LATO, x, y):
+def movimentoCasuale(LATO, x, y):                                                                           # movimento nemici con risoluzione "effetto PAC-MAN"
     asse = random.choice(['x', 'y'])
     movimento = random.choice([-1, 1])
     if asse == 'x':
@@ -393,7 +467,4 @@ def movimentoCasuale(LATO, x, y):
 
     return x, y
 
-main()
-
-
-# %%
+# main()

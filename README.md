@@ -14,7 +14,7 @@ I apologize to anyone who doesn't speak italian.
  Materia         | Appunti | Esercizi | Stato        | Ultimo aggiornamento
 -----------------|---------|----------|------------- |----------------------
  Assembly (mips) |   [x]   |   [x]    | Incompleti   | 23/06/22
- Python          |   [ ]   |   [x]    | Incompleti   | 04/07/22
+ Python          |   [ ]   |   [x]    | Incompleti   | 05/07/22
  
  ---
  

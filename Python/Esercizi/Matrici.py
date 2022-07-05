@@ -155,14 +155,14 @@ def es5(lista1, lista2, matrice):
 """ES 6 - difficile
 Progettiamo il nostro primo gioco sulle matrici!
 La nostra funzione questa volta non riceverà parametri in input e non ritornerà nulla, si svolgerà tutto interamente sul terminale.
-Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad uno spazio bianco. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
+Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad un under score '_'. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
 (al centro della matrice) e potrà spostarsi dentro di essa tramite i classici comandi WASD. Quando il PG attraversa un bordo della matrice, riappare dall'altra parte (effetto PAC-MAN).
 Al disopra della matrice (o dovunque preferiate) dovrà esserci un contatore delle vite del personaggio e un contatore dei punti.
-All'interno dell matrice saranno presenti degli NPC nemici, rappresentati con il carattere '#' che ad od ogni turno si sposteranno in una casella casuale adiacente (non in diagonale).
-Se un NPC entra a contatto con il  nostro PG, (si trovano quindi sulla stessa casella), il PG verrà spostato su una casella adiacente casuale (anche in diagonale) e perderà una vita.
-L'obbiettivo del PG è quello di raccogliere punti '+' in giro per la matrice. Il primo punto apparirà in una posizione casuale diversa da quella del PG e del NPC. I successivi punti
-compariranno sempre in posizioni casuali diverse da quelle del PC e degli NPC (che andranno aumentando ogni 3 punti raccolti, comparendo in caselle casuali diverse da quella del PG, di
-altri NPC e del punto).
+All'interno dell matrice saranno presenti dei nemici, rappresentati con il carattere '#' che ad od ogni turno si sposteranno in una casella casuale adiacente (non in diagonale).
+Se un nemico entra a contatto con il  nostro PG, si trovano quindi sulla stessa casella, il PG  perderà una vita.
+L'obbiettivo del PG è quello di raccogliere punti '+' in giro per la matrice. Il primo punto apparirà in una posizione casuale diversa da quella del PG e del nemico. I successivi punti
+compariranno sempre in posizioni casuali diverse da quelle del PC e dei nemici (che andranno aumentando ogni volta che il punto cambia posizione, comparendo in caselle casuali diverse 
+da quella del PG, di altri NPC e del punto). Anche i nemici posono prendere i punti '+', facendo comparire altri nemici.
 Il gioco va in GAME OVER quando il PG perde tutte e 3 le sue vite.
 
 Per lo svolgimento di questo esercizio consiglio di usare copiare la traccia su uno script vuoto, strutturando il programma su più funzioni con ruoli ben precisi. 
