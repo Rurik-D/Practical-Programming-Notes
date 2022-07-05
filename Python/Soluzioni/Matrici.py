@@ -445,7 +445,7 @@ def stampaGriglia(LATO, griglia, vite, punti, nemici):                          
 def posizioneCasuale(posTot, posEscluse):                                                                   # spawn nemici e punti, escluse posizioni occupate da altri oggetti
     posTotTmp = posTot.copy()
     for posizione in posEscluse:
-        try:
+        try:                                                                                                # evito di rimuovere la stessa posizione due volte (nemici sovrapposti)
             posTotTmp.remove(tuple(posizione))
         except ValueError:
             continue
@@ -471,4 +471,4 @@ def movimentoCasuale(LATO, x, y):                                               
 
     return x, y
 
-# main()
+main()
