@@ -10,6 +10,7 @@ Conoscenze richieste:
 """
 
 
+
 #%%
 """ ES 0 - banale
 Si definisca una funzione che dati in input un valore h, un valore l e un carattere alfanumerico x, ritorni una matrice bidimensionale di altezza
@@ -57,8 +58,39 @@ def es1(lista):
 
 
 
+
 #%%
-""" ES 2 - medio/facile
+""" ES 2 - facile
+Data in input una matrice (quadrata), si ritorni la somma delle diagonali
+"""
+
+def es2(matrice):
+    somma = 0
+    i, j = 0, len(matrice[0]) - 1
+
+    for riga in matrice:
+        somma += riga[i] + riga[j]
+        i += 1
+        j -= 1
+
+    return somma
+
+
+# print(es2([[ 8,  2,  6, -9,  3,  4, -5], 
+#            [ 7, -3, -5,  2, -7,  9,  1], 
+#            [ 4, -6, -8,  3,  5,  7,  4], 
+#            [-1,  7,  3, -6,  9,  5,  5], 
+#            [-6,  2,  9,  6, -5, -1,  2], 
+#            [ 5, -4, -7, -3,  6,  8, -2], 
+#            [-2,  4,  7,  4,  8, -8,  9]]))
+
+# OUTPUT : 9
+
+
+
+
+#%%
+""" ES 3 - medio/facile
 Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzionale:
     Le tuple possono contenere un quarto valore 'origine' che indichi il punto di origine della matrice, che di default è in alto a sinistra.
     Questo parametro può essere solo uno di tra 4:
@@ -71,7 +103,7 @@ Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzional
     Nella lista d'esempio, la terza tupla va ignorata, di consequenza anche il la modifica dell'origine va ignorata.
 """
 
-def es2(lista):
+def es3(lista):
     matrice = [['#' for i in range(4)] for j in range(4)]
     altezza = len(matrice) - 1
     larghezza = len(matrice[0]) - 1
@@ -95,43 +127,13 @@ def es2(lista):
             
     return matrice
 
-# print(es2([(2, 3, 'þ'), (0, 1, '←', "DL"), (1, 4, '╦', "UR"), (3, 2, '♠'), (0, 0, 'O', "UL"), (0, 0, 'O', "DL"), (0, 0, 'O', "UR"), (0, 0, 'O', "DR")]))
+# print(es3([(2, 3, 'þ'), (0, 1, '←', "DL"), (1, 4, '╦', "UR"), (3, 2, '♠'), (0, 0, 'O', "UL"), (0, 0, 'O', "DL"), (0, 0, 'O', "UR"), (0, 0, 'O', "DR")]))
 
 # OUT:
 #            [['O', '#', '#', 'O'], 
 #             ['#', '#', '#', '♠'], 
 #             ['←', '#', '#', '#'], 
 #             ['O', '#', 'þ', 'O']]
-
-
-
-
-#%%
-""" ES 3 - medio/facile
-Data in input una matrice (quadrata), si ritorni la somma delle diagonali
-"""
-
-def es3(matrice):
-    somma = 0
-    i, j = 0, len(matrice[0]) - 1
-
-    for riga in matrice:
-        somma += riga[i] + riga[j]
-        i += 1
-        j -= 1
-
-    return somma
-
-
-# print(es3([[ 8,  2,  6, -9,  3,  4, -5], 
-#            [ 7, -3, -5,  2, -7,  9,  1], 
-#            [ 4, -6, -8,  3,  5,  7,  4], 
-#            [-1,  7,  3, -6,  9,  5,  5], 
-#            [-6,  2,  9,  6, -5, -1,  2], 
-#            [ 5, -4, -7, -3,  6,  8, -2], 
-#            [-2,  4,  7,  4,  8, -8,  9]]))
-
-# OUTPUT : 9
 
 
 
@@ -234,6 +236,8 @@ def es4(matrice):
 # es4([['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']])
 
 
+
+
 #%%
 """ ES 5 - medio
 Data in input una matrice, si sommi ogni elemento con il precedente, seguendo una spirale che parte dall'origine e gira in senso orario. Si ritorni la matrice modificata e il 
@@ -302,13 +306,13 @@ def es5(matrice):
     SOMMA_MAGGIORE = sommeFinali[0][0]
     return matrice, SOMMA_MAGGIORE
 
-print(es5([[ 8,  2,  6, -9,  3,  4, -5],        # OUT : [[8,  10, 16, 7,  10, 14, 9],
-           [ 7, -3, -5,  2, -7,  9,  1],        #        [50, 47, 42, 44, 37, 46, 10],
-           [ 4, -6, -8,  3,  5,  7,  4],        #        [43, 60, 52, 55, 60, 53, 14], 
-           [-1,  7,  3, -6,  9,  5,  5],        #        [39, 66, 82, 76, 69, 58, 19],
-           [-6,  2,  9,  6, -5, -1,  2],        #        [40, 59, 79, 70, 64, 57, 21],
-           [ 5, -4, -7, -3,  6,  8, -2],        #        [46, 57, 61, 68, 71, 65, 19],
-           [-2,  4,  7,  4,  8, -8,  9]]))      #        [41, 43, 39, 32, 28, 20, 28]] , 10
+# print(es5([[ 8,  2,  6, -9,  3,  4, -5],        # OUT : [[8,  10, 16, 7,  10, 14, 9],
+#            [ 7, -3, -5,  2, -7,  9,  1],        #        [50, 47, 42, 44, 37, 46, 10],
+#            [ 4, -6, -8,  3,  5,  7,  4],        #        [43, 60, 52, 55, 60, 53, 14], 
+#            [-1,  7,  3, -6,  9,  5,  5],        #        [39, 66, 82, 76, 69, 58, 19],
+#            [-6,  2,  9,  6, -5, -1,  2],        #        [40, 59, 79, 70, 64, 57, 21],
+#            [ 5, -4, -7, -3,  6,  8, -2],        #        [46, 57, 61, 68, 71, 65, 19],
+#            [-2,  4,  7,  4,  8, -8,  9]]))      #        [41, 43, 39, 32, 28, 20, 28]] , 10
 
 
 
