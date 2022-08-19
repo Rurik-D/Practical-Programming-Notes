@@ -88,7 +88,7 @@
 # Un intero può richiedere da un byte fino ad un'intera word.
 
 
-	             ############
+                 ############
                  # REGISTRI #
                  ############
 			
