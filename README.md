@@ -13,14 +13,14 @@ I apologize to anyone who doesn't speak italian.
 
  Materia         | Appunti | Esercizi | Stato        | Ultimo aggiornamento
 -----------------|---------|----------|------------- |----------------------
- Assembly (mips) |   [x]   |   [x]    | Incompleti   | 23/06/22
- Python          |   [ ]   |   [x]    | Incompleti   | 05/07/22
+ Assembly (mips) |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Assembly%20(mips)/Appunti)]   |   [ ]    | Incompleti   | 23/06/22
+ Python          |   [ ]   |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Python/Esercizi)]    | Incompleti   | 05/07/22
  
  ---
  
  ## LICENZA
  
  Questi appunti sono di libero utilizzo, chiunque può scaricarli e/o modificarli.    
- Chiedo gentilmente che la condivisione avvenga tramite [questo link](https://github.com/Rurik-D/University-notes), o che comunque si faccia riferimento a chi li ha scritti.   
- Ad ogni modo potrete trovare inormazioni sulla licenza utilizzata [qui](https://github.com/Rurik-D/University-notes/blob/main/LICENSE).
+ Chiedo gentilmente che la condivisione avvenga tramite [questo link](https://github.com/Rurik-D/Practical-Programming-Notes), o che comunque si faccia riferimento a chi li ha scritti.   
+ Ad ogni modo potrete trovare inormazioni sulla licenza utilizzata [qui](https://github.com/Rurik-D/Practical-Programming-Notes/blob/main/LICENSE).
  
