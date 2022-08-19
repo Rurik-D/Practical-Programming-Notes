@@ -1,12 +1,12 @@
 
-		# ARCHITETTURA DEGLI ELABORATORI #
+        # ARCHITETTURA DEGLI ELABORATORI #
 
-				# INTRODUZIONE #
+                # INTRODUZIONE #
 		
 		
-					#######			
-					# CPU #
-					#######
+                    #######			
+                    # CPU #
+                    #######
 			
 # La Central Processing Unit è formata da:
 # 	• Unità di elaborazione Aritmetico/Logica (ALU)
