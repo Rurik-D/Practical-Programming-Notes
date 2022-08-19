@@ -26,10 +26,10 @@
 #	• Il Bus di comunicazione con le Perifieriche (in/out)
 
 
-				#################
-				# CPU DELLA IAS #
-				#    MACHINE	#
-				#################
+                #################
+                # CPU DELLA IAS #
+                #    MACHINE    #
+                #################
 			
 # L'IAS machine fu il primo computer digitale costruito 
 # dall'Institute for Advanced Study di Princeton nel 1951.
@@ -63,24 +63,24 @@
 #		.Per i risultati parziali dei caloli della ALU
 
 
-					########
-					# MIPS #    -> (Milion Instructions Per Second)
-					########
+                    ########
+                    # MIPS #    -> (Milion Instructions Per Second)
+                    ########
 
 # Il MIPS è un'architettura di tipo RISC: (Reduced Instruction Set Computer)
-#	• Istruzioni di dimensione fissa
-#		.Fetch(vedi dopo) della successiva senza decodifica della prec.
-#	• Istruzioni di formato uniforme
-#		.Per semplificare la fase di decodifica
-#	• Operazioni ALU solo tra registri
-#		.Senza accesso a memoria
-#	• Molti registri interni
-#		.Per i risultati parziali senza accessi alla memoria
-#	• Modi di indirizzamento semplici
-#		.Con spiazzamento, 1 solo accesso a memoria
-#		.Durata fissa della istruzione
-#		.Conflitti semplici
-#	• Istruz. semplici => pipeline più veloce
+#    • Istruzioni di dimensione fissa
+#        .Fetch(vedi dopo) della successiva senza decodifica della prec.
+#    • Istruzioni di formato uniforme
+#        .Per semplificare la fase di decodifica
+#    • Operazioni ALU solo tra registri
+#        .Senza accesso a memoria
+#    • Molti registri interni
+#        .Per i risultati parziali senza accessi alla memoria
+#    • Modi di indirizzamento semplici
+#        .Con spiazzamento, 1 solo accesso a memoria
+#        .Durata fissa della istruzione
+#        .Conflitti semplici
+#    • Istruz. semplici => pipeline più veloce
 
 # Le istruzioni sono tutte a 32 bit.
 # BYTE(8 bits), HALFWORD (2 bytes), WORD (4 bytes).
@@ -88,9 +88,9 @@
 # Un intero può richiedere da un byte fino ad un'intera word.
 
 
-				 ############
-				 # REGISTRI #
-				 ############
+	             ############
+                 # REGISTRI #
+                 ############
 			
 # I registri consentono l'accesso veloce dei dati.
 # Nel MIPS gli operandi devono essere contenuti nei registri per poter eseguire
@@ -108,42 +108,42 @@
 # ("move from Hi" e "move from Lo").
 
 # ______________________________________________________________________________
-#  	0	 -   $zero
+#   0    -    $zero
 #	 .Contiene sempre il valore 0
 
-#   1	 -   $at	  -	   Assembler Temporary
+#   1	 -    $at        -    Assembler Temporary
 #	 .Riservato all'assembler per la gestione di costanti molto lunghe
 
-#  2/3   -  $v0/$v1 	-  Values
+#  2/3   -    $v0/$v1    -    Values
 #	 .Risutlati e valutazione di espressioni
 
-#  4/7	 -  $a0/$a3 	-  Arguments
+#  4/7   -    $a0/$a3    -    Arguments
 #	 .Argomenti da passare alle procedure
 
-#  8/15  - $t0/$t7 	- 	Temporaries
+#  8/15  -    $t0/$t7    -    Temporaries
 #	 .Variabili temporanee
 
-#  16/23 - $s0/$s7 	- 	Saved Values
+#  16/23 -    $s0/$s7    -    Saved Values
 #	 .Variabili da salvare
 
-#  24/25 - $t8/$t9 	- 	Temporaries
+#  24/25 -    $t8/$t9    -    Temporaries
 #	 .Altri registri temporanei
 
-#  26/27 - $k0/$k1
+#  26/27 -    $k0/$k1
 #	 .Riservati per l'uso da parte del interrupt/trap handler
 
-#  28      $gp  	- 	Global Pointer
+#  28    -    $gp        -    Global Pointer
 #	 .Per gestire dati dinamici non locali
 
-#  29      $sp     	- 	Stack Pointer			   	
+#  29    -    $sp        -    Stack Pointer			   	
 #	 .Memorizza l'indirizzo dell'ultimo dato aggiunto nello STACK,
 #	  per chiamate nidificate e variabili locali
 
-#  30      $fp 		- 	Frame Pointer
+#  30    -    $fp        -    Frame Pointer
 #	 .Valore che individua la posizione dei registri salvati e delle
 #	  variabili locali di una data procedura
 
-#  31      $ra     	- 	Return Address 
+#  31    -    $ra        -    Return Address 
 #	.Serve per tornare all'esecuzione del del programma dopo la 
 #	 chiamata di una procedura
 # ______________________________________________________________________________
@@ -151,9 +151,9 @@
 
 # Non preoccupatevi se le cose non sono chiare, ogni argomento verrà ripreso in seguito
 
-				  ###########
-				  # MEMORIA #
-				  ###########
+                    ###########
+                    # MEMORIA #
+                    ###########
 			
 # I contenuti delle locazioni di memoria possono rappresentare sia
 #  istruzioni che dati.
@@ -167,53 +167,53 @@
 
 # Organizzazione logica della memoria:
 	#---------------------------# 0x7fffffff
-	#	  	D   Stack	D	    #
+	#      D    Stack    D      #
 	#---------------------------# <- SP 0x7ffffffc (decresce verso il Data Segment)
-	#							#
-	#      Spazio Libero	    #
-	#							#				   (i dati dinamici crescono verso lo Stack,
+	#                           #
+	#      Spazio Libero        #
+	#                           #    (i dati dinamici crescono verso lo Stack,
 	#---------------------------# <- GP 0X10008000  il GP viene impostato con un indirizzo
-	#    U Dati Dinamici U 	    #				    che rende facile l'accesso ai dati)
+	#    U Dati Dinamici U 	    #    che rende facile l'accesso ai dati)
 	#---------------------------# Data Segment
-	#   Dati Statici(.data)		#
+	#    Dati Statici(.data)    #
 	#---------------------------# 0x10000000
-	#							#
+	#                           #
 	#  Programma Utente(.text)  # -> dove l'utente scrive il codice
-	#							# 
+	#                           # 
 	#---------------------------# <- PC 0x00400000 (Program Counter)  
 	#   Riservato al Kernel     #
 	#---------------------------#
 
 # STACK:
-#	Struttura dati contenente una coda di tipo "last-in-first-out",
-#	(ultimo-inserito-primo-estratto) utilizzata per salvare il
-#	contenuto dei registri.
+#  Struttura dati contenente una coda di tipo "last-in-first-out",
+#  (ultimo-inserito-primo-estratto) utilizzata per salvare il
+#  contenuto dei registri.
 
 
-			######################
-			# FASI DI ESECUZIONE #
-			#  DI UN'ISTRUZIONE  #
-			######################
+                ######################
+                # FASI DI ESECUZIONE #
+                #  DI UN'ISTRUZIONE  #
+                ######################
 		
 # FETCH - Caricamento di una istruzione.
-#     (Dalla posizione idicata dal Program Counter)
+#    (Dalla posizione idicata dal Program Counter)
 # DECODIFICA - Riconoscimento dell'istruzione.
-#     (La Control Unit attiva le parti funzionali necessarie)
+#    (La Control Unit attiva le parti funzionali necessarie)
 # LOAD - Caricamento di eventuali argomenti.
-#	  (A seconda dei modi di indirizzamento)
+#    (A seconda dei modi di indirizzamento)
 # ESECUZIONE dell'istruzione.
-#	  (in genere da parte dell'ALU)
+#    (in genere da parte dell'ALU)
 # STORE - salvataggio del risultato.
-#	  (In memoria o in un registro)
+#    (In memoria o in un registro)
 # AGGIORNAMENTO DEL PROGRAM COUNTER.
-#	  (contemporaneamente ad altre fasi)
+#    (contemporaneamente ad altre fasi)
 
 
 
-.globl main # indicates start of code (first instruction to execute)
+.globl main  # indicates start of code (first instruction to execute)
 	
-.data       # variable declarations follow this line
+.data        # variable declarations follow this line
 
-.text       # instructions follow this line	
+.text        # instructions follow this line	
 
 main:
