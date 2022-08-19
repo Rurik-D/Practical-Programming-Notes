@@ -7,7 +7,7 @@ These are some programming notes i made during my university career. I hope that
 Questi sono alcuni appunti di programmazione fatti durante la mia carriera universitaria. Spero possano tornare utili a chiunque stia cercando alcuni esercizi e spiegazioni pratiche riguardo le materie del corso di informatica.
    
 PS   
-I apologize to anyone who doesn't speak italian.   
+I apologize to anyone who doesn't speak italian. 
 
 ---
 
@@ -15,6 +15,10 @@ I apologize to anyone who doesn't speak italian.
 -----------------|---------|----------|------------- |----------------------
  Assembly (mips) |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Assembly%20(mips)/Appunti)]   |   [ ]    | Incompleti   | 23/06/22
  Python          |   [ ]   |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Python/Esercizi)]    | Incompleti   | 05/07/22
+ 
+ ---
+ 
+ Per gli appunti di assembly settare l'indentazione di mars a 4 per una lettura consona dei file.
  
  ---
  
