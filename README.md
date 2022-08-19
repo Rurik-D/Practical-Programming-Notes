@@ -1,10 +1,10 @@
-# University-notes
+# Practical Programming Notes
    
 **[eng]**
-These are some notes made during my university career. I hope that these notes can may turn usefull for anyone that are searching for some exercise, and practical explanation, about the computer science's subjects.   
+These are some programming notes i made during my university career. I hope that these notes can may turn usefull to anyone that are searching for some exercise and practical explanation about the computer science's subjects.   
    
 **[ita]**
-Questi sono alcuni appunti fatti durante la mia carriera universitaria. Spero possano tornare utili a chiunque stia cercando alcuni esercizi, e spiegazioni pratiche, riguardo le materie del corso di informatica.
+Questi sono alcuni appunti di programmazione fatti durante la mia carriera universitaria. Spero possano tornare utili a chiunque stia cercando alcuni esercizi e spiegazioni pratiche riguardo le materie del corso di informatica.
    
 PS   
 I apologize to anyone who doesn't speak italian.   
