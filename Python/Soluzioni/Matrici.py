@@ -1,8 +1,8 @@
 """
 Autor: Rurik
 
-Ricordiamo che per matrice si intende un array bidimensionale (array di array) contenente, in ciascun sotto-array, qualsiasi tipo di valore. In python le rappresentiamo come
-liste di liste.
+Ricordiamo che per matrice si intende un array bidimensionale (array di array) contenente, in ciascun sotto-array, qualsiasi tipo di valore. 
+In python le rappresentiamo come liste di liste.
 
 Conoscenze richieste:
     - Manipolazione delle strutture dati
