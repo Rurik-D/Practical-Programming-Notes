@@ -14,7 +14,7 @@ I apologize to anyone who doesn't speak italian.
  Materia         | Appunti | Esercizi | Stato        | Ultimo aggiornamento
 -----------------|---------|----------|------------- |----------------------
  Assembly (mips) |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Assembly%20(mips)/Appunti)]   |   [ ]    | Incompleti   | 23/06/22
- Python          |   [ ]   |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Python/Esercizi)]    | Incompleti   | 05/07/22
+ Python          |   [ ]   |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Python/Esercizi)]    | Incompleti   | 18/11/22
  
  ---
  
