@@ -161,13 +161,29 @@ out:
 
 
 #%%
-""" ES 8 - 
-
+""" ES 8 - difficile         (parte di un HW dell'AA22-23)
+Dati in input una lista di parole e un dizionario avente per chiavi indici che vanno da 0 alla lunghezza della parola più lunga all'interno della lista-1, e
+per valori dei dizionari vuoti; bisogna riempire i dizionari vuoti interni in modo tale che abbiano, per chiavi le lettere delle parole che compaiono all'indice
+che fa da chiave a quel dizionario, e per valori la frequenza di quelle lettere.
 """
 
-def es8(a, b):
-    #Inserisci qui il tuo codice
-    pass
+def es8(occurrences, words):
+    list(map(lambda word : list(map(lambda i : occurrences[i].update({word[i] : occurrences[i].get(word[i], 0) + 1}), range(len(word)))), words))
 
+# w = ['house', 'garden', 'kitchen', 'balloon', 'home', 'park', 'affair', 'kite', 'hello', 'portrait', 'angel', 'surfing']
+# occ = { k : {} for k in range(max(list(map(lambda x : len(x), words)))) }
+# print(es8(occ, w))
 
-
+"""
+out: 
+    {
+    0: {'h': 3, 'g': 1, 'k': 2, 'b': 1, 'p': 2, 'a': 2, 's': 1}, 
+    1: {'o': 3, 'a': 3, 'i': 2, 'f': 1, 'e': 1, 'n': 1, 'u': 1}, 
+    2: {'u': 1, 'r': 4, 't': 2, 'l': 2, 'm': 1, 'f': 1, 'g': 1}, 
+    3: {'s': 1, 'd': 1, 'c': 1, 'l': 2, 'e': 3, 'k': 1, 'a': 1, 't': 1, 'f': 1}, 
+    4: {'e': 2, 'h': 1, 'o': 2, 'i': 2, 'r': 1, 'l': 1}, 
+    5: {'n': 2, 'e': 1, 'o': 1, 'r': 1, 'a': 1}, 
+    6: {'n': 2, 'i': 1, 'g': 1}, 
+    7: {'t': 1}
+    }
+"""
