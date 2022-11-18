@@ -2,14 +2,12 @@
 Autor: Rurik
 
 In questo file verranno trattati esercizi inerenti a liste, dizionari, tuple e insiemi.
-Non sono necessarie conoscenze di altri argomenti per affrontare gli esercizi.
 """
 
 
 
 #%%
-"""
-ES 0 - banale
+""" ES 0 - banale
 Data in input una lista di valori, restituire un dizionario contenente per chiavi i valori contenuti nella lista e per valori il numero di
 occorrenze del valore nella lista
 """
@@ -30,27 +28,21 @@ def es0(lista):
 
 
 
-
 #%%
 """
-ES 1 - banale
-Data in input una stringa, ritornare una stringa modificata secondo i seguenti parametri:
-    'a' -> '4'      'A' -> 'a'      'm' -> 'N'      'x', 'y', 'z' -> '*'
-    'e' -> '3'      'E' -> 'e'      'M' -> 'n'      'k', 'j', 'w' -> '#'
-    'i' -> '1'      'I' -> 'i'      'n' -> 'M'      
-    'o' -> '0'      'O' -> 'o'      'N' -> 'm'      
+ES 1 - facile
+Data in input una lista di interi, scrivere una funzione che ritorni una lista dove il primo elemento è stato sommato con l'ultimo, il secondo
+con il penultimo ecc... 
+(La nuova lista avrà quindi la metà dei valori, inoltre, se la lista aveva lunghezza dispari, l'ultimo valore non verrà modificato)
 
-Infine gli spazi ' ' vengono tradotti in trattini bassi '_'.
 """
 
-def es1(stringa):
+def es1():
     # inserisci qui il tuo codice
     pass
 
-# print(es1("Testo di Esempio cOn Molta fantasia xyz kjw"))
-
-# OUT : T3st0_d1_es3Np10_coM_n0lt4_f4Mt4s14_***_###
-
+# print(es0([4, 7, 15, 8, 2, 1, 4, 13, 1, 11, 10]))
+# out : [14, 18, 16, 21, 6, 1]
 
 
 
