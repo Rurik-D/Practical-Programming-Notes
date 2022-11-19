@@ -5,7 +5,6 @@ In questo file verranno trattati esercizi inerenti a liste, dizionari, tuple e i
 """
 
 
-
 #%%
 """ ES 0 - banale
 Data in input una lista di valori, restituire un dizionario contenente per chiavi i valori contenuti nella lista e per valori il numero di
@@ -63,6 +62,7 @@ def es2(lista):
 # es2([3, 7, 9, 5])
 
 
+
 #%%
 """ ES 3 - facile
 Scrivi una funzione che data in ingresso una stringa contenente n parole separate da spazi o trattini bassi, restituisca 
@@ -78,6 +78,8 @@ def es3(stringa):
 # out : [3, 0, 1, 5, 1, 3]
 
 
+
+#%%
 """ ES 4 - medio
 Data una lista di interi ritornare una tupla che contenga in sequenza:
     1. la somma di tutti i valori nella lista
