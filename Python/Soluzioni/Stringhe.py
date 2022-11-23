@@ -8,7 +8,7 @@ Sono richieste conoscenze basilari sulle strutture dati, ma perfettamente abbord
 
 #%%
 """ ES 0 - banale
-Data in input una stringa, si elimino tutte le vocali e si torni una tupla contenente la stringa modificata e il numero di vocali eliminate.
+Data in input una stringa, si eliminino tutte le vocali e si torni una tupla contenente la stringa modificata e il numero di vocali eliminate.
 """
 
 def es0(stringa):
