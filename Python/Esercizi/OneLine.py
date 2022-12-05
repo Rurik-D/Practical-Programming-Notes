@@ -72,7 +72,7 @@ def es3(stringa):
 
 #%%
 """ ES 4 - medio
-Scrivere una funzione che sommi due numeri solo se positivi e divisibili per 2, altrimenti ne faccia la sottrazione.
+Scrivere una funzione che sommi due numeri solo se entrambi positivi e divisibili per 2, altrimenti ne faccia la sottrazione.
 """
 
 def es4(num1, num2):
