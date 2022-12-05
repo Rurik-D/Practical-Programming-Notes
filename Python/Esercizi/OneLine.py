@@ -79,7 +79,7 @@ def es4(num1, num2):
     #Inserisci qui il tuo codice
     pass
 
-# print(es4(20, 24))                      # OUT: 44['abba', 'Erano usi suonare.', 'a bCcBa']
+# print(es4(20, 24))                      # OUT: 44
 # print(es4(21, 24))                      # OUT: -3
 # print(es4(-20, 24))                     # OUT: -44
 
