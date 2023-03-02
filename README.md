@@ -15,7 +15,7 @@ I apologize to anyone who doesn't speak italian.
 -----------------|---------|----------|------------- |----------------------
  Assembly (mips) |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Assembly%20(mips)/Appunti)]   |   [ ]    | Incompleti   | 23/06/22
  Python          |   [ ]   |   [[x](https://github.com/Rurik-D/Practical-Programming-Notes/tree/main/Python/Esercizi)]    | Incompleti   | 18/11/22
- 
+  Java              | [ ]     | [ ]      | Da pubblicare
  ---
  
  Per gli appunti di assembly settare l'indentazione di mars a 4 per una lettura consona dei file.
