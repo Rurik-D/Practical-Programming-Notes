@@ -1,12 +1,12 @@
 #%% es_1
 """
-Scrivere una funzione ricorsiva che, data una stringa s, restituisce vero se la 
+Scrivere una funzione ricorsiva che, data una stringa, restituisca vero se la 
 stringa contiene solo coppie consecutive formate da una cifra numerica e un 
 carattere alfabetico; falso altrimenti.
 """
 
 # @trace
-def ex1(s):
+def ex1(stringa):
     pass
     
     
@@ -19,13 +19,13 @@ print(ex1("3d4f2g"))
 
 #%% es_2
 """
-Scrivere una funzione ricorsiva booleana che, data una stringa s, una stringa c
-di lunghezza 1, e un intero n, restituisce il valore vero se c è presente ALMENO
-n volte nella stringa s, falso altrimenti.
+Scrivere una funzione ricorsiva booleana che data una stringa, un carattere, 
+(stringa di lunghezza 1) e un intero n, restituisca il True se il carattere è 
+presente ALMENO n volte nella stringa, False altrimenti.
 """
 
 # @trace
-def ex2(s, c, n):
+def ex2(stringa, caratere, n):
     pass
         
         
@@ -35,13 +35,13 @@ print(ex2("trentatre trentini", "t", 4))
 
 #%% es_3
 """
-Scrivere una funzione ricorsiva che data una stringa s restituisca la stringa 
-ottenuta da s eliminando le vocali. Ad esempio l’invocazione eliminaVocali
-(‘pippo’) deve restituire la stringa ‘ppp’.
+Scrivere una funzione ricorsiva che data una stringa restituisca la stringa 
+ottenuta da eliminando le vocali. Ad esempio l"invocazione ex3("pippo") deve
+restituire la stringa "ppp".
 """
 
 # @trace
-def ex3(s):
+def ex3(stringa):
     pass
     
     
@@ -51,14 +51,16 @@ print(ex3("trentatre trentini"))
 
 #%% es_4
 """
-Scrivere una funzione ricorsiva che, data una stringa s, restituisce come 
-risultato una stringa ottenuta elimanando da s tutti i caratteri ripetuti 
+Scrivere una funzione ricorsiva che, data una stringa, restituisca come 
+risultato la stringa ottenuta elimanando tutti i caratteri ripetuti 
 consecutivamente, tranne il primo.
-Es: se s = ‘aaabbcccc’ la funzione deve restituire ‘abc’;
-    se s = ‘ababcc’    la funzione deve restituire ‘ababc’.
+
+Es: 
+    ex4("aaabbcccc")  =>  "abc"
+    ex4("ababcc")     =>  "ababc"
 """
 # @trace
-def ex4(s):
+def ex4(stringa):
     pass
     
     
@@ -68,12 +70,12 @@ print(ex4("aaabbcccc"))
 
 #%% es_5
 """
-Scrivere una funzione ricorsiva che data una lista di interi l restituisce la 
+Scrivere una funzione ricorsiva che data una lista di interi restituisca la 
 somma dei soli numeri pari.
 """
 
 # @trace
-def ex5(l):
+def ex5(lista_interi):
     pass
     
 
@@ -84,44 +86,26 @@ print(ex5([1, 2, 3, 4, 5, 6, 7, 8]))
 #%% es_6
 """
 Scrivere una funzione ricorsiva che, data una lista di numeri interi (positivi 
-o negativi), restituisce come risultato il valore vero se la somma dei numeri 
-contenuti nella lista è un valori pari, falso altrimenti. Se la lista è vuota, 
-la funzione restituisce il valore vero.
+o negativi), restituisca True se la somma dei numeri contenuti nella lista è pari, 
+False altrimenti (se la lista è vuota, la funzione restituisce il valore True).
 """
 
 # @trace
-def ex6(l):
+def ex6(lista_interi):
     pass
 
 # ex6.trace([-2, -3, 4, 5])
 print(ex6([-2, -3, 4, 5]))
 
-#%% speciale
-"""
-somma interi della lista
-"""
-def ex(lista):
-    pass
-
-print(ex([-2, -3, 4, 5]))
-
-#%% speciale
-"""
-somma interi della lista
-"""
-def ex(lista):
-    pass
-
-print(ex([-2, -3, 4, 5]))
 
 #%% es_7
 """
-Scrivere un funzione ricorsiva che data una stringa s controlli se la stringa 
+Scrivere un funzione ricorsiva che data una stringa controlli se la stringa 
 è palindroma.
 """
 
 # @trace
-def ex7(s):
+def ex7(stringa):
     pass
 
 # ex7.trace("abmba")
@@ -130,13 +114,16 @@ print(ex7("abmba"))
 
 #%% es_8
 """
-Scrivere una funzione ricorsiva che, dato una lista di interi l, restituisca 
-una nuova lista di interi ottenuto da l sostituendo ogni numero negativo con 0. 
-Ad esempio l’invocazione ex8([1,-2, 3, 4,-5]), deve restituire l’array [1, 0, 3, 4, 0].
+Scrivere una funzione ricorsiva che, dato una lista di interi, restituisca 
+una nuova lista di interi ottenuta a partire dalla lista iniziale, sostituendo 
+ogni numero negativo con 0. 
+
+Es:
+    ex8([1,-2, 3, 4,-5])  =>  [1, 0, 3, 4, 0]
 """
 
 # @trace
-def ex8(l):
+def ex8(lista_interi):
     pass
 
 # ex8.trace()
@@ -145,13 +132,15 @@ print(ex8([1,-2, 3, 4,-5]))
 
 #%% es_9
 """
-Scrivere una funzione ricorsiva che data una stringa s, restituisca una stringa 
-costituita dai caratteri di s invertiti. Ad esempio l’invocazione ex9(‘pippo’) 
-deve restituire la stringa ‘oppip’.
+Scrivere una funzione ricorsiva che data una stringa, restituisca una stringa
+invertita rispetto alla stringa iniziale. 
+
+Es:
+    ex9("pippo")  =>  "oppip"
 """
 
 # @trace
-def ex9(s):
+def ex9(stringa):
     pass
     
     
@@ -161,30 +150,36 @@ print(ex9("pippo"))
 
 #%% es_10
 """
-Scrivere una funzione ricorsiva che data un stringa s, restituisca una stringa 
-ottenuta da s sostituendo ogni spazio bianco con il carattere underscore (‘_’).
-Ad esempio l’invocazione ex10(‘pippo e topolino’) deve restituire la 
-stringa ‘pippo_e_topolino’.
+Scrivere una funzione ricorsiva che data un stringa, restituisca una stringa 
+ottenuta dalla stringa iniziale sostituendo ogni spazio bianco con il carattere 
+underscore ("_").
+
+Es:
+    ex10("oggi sono andato al mare")  =>  "oggi_sono_andato_al_mare"
 """
 
 # @trace
-def ex10(s):
+def ex10(stringa):
     pass
     
 
-# ex10.trace("tua madre è leggenda")
-print(ex10("tua madre è leggenda"))
+# ex10.trace("oggi sono andato al mare")
+print(ex10("oggi sono andato al mare"))
 
 
 #%% es_11
 """
-Si definisca una funzione ricorsiva che, data una lista di stringhe e una 
-stringa x di un carattere, restituisce true se almeno una di queste stringhe 
-contiene il carattere specificato da x, e false altrimenti.
+Si definisca una funzione ricorsiva che, data una lista di stringhe e un
+carattere, restituisca True se almeno una delle stringhe nella lista
+contenga il carattere specificato, e false altrimenti.
+
+Es:
+    ex11(["casa", "barca", "albero"], "o")  =>  True
+
 """
 
 # @trace
-def ex11(l, x):
+def ex11(lista_stringhe, carattere):
     pass
     
 
@@ -194,102 +189,151 @@ print(ex11(["casa", "barca", "albero"], "o"))
 
 #%% es_12
 """
-Si definisca una funzione ricorsiva che, data una lista di interi l, e un 
-valore intero x, verifica che la lista goda della seguente proprietà:
+Si definisca una funzione ricorsiva che, data una lista di stringhe, un
+carattere e un intero k, restituisca True se almeno una delle stringhe 
+nella lista contiene il carattere specificato esattamente k volte, False 
+altrimenti.
 
-    Per ogni intero i < len(l)/2 : l[i] + l[len(l) - i - 1] = x
-
-Nota: se la lista è di lunghezza dispari, il valore dell’elemento centrale è 
-ininfluente.
+Es:
+    ex12(["casa", "barca", "albero"], "a", 2)  =>  True
 """
 
 # @trace
-def ex12(l, x):
+def ex12(lista_stringhe, carattere, k):
     pass
     
 
-# ex12.trace([0, 1, 2, 3], 3)
-print(ex12([0, 1, 2, 3], 3))
+# ex12.trace(["casa", "barca", "albero"], "a", 2)
+print(ex12(["casa", "barca", "albero"], "a", 2))
 
 
 #%% es_13
 """
-Si definisca una funzione ricorsiva che, data una lista l, un valore v e un
-intero k, restituisce true se il valore v è presente in tutte le posizioni
-della lista il cui indice è multiplo di k, e false altrimenti.
+Si definisca una funzione ricorsiva che, data una lista di stringhe, un
+carattere e due interi k, m, restituisca True se almeno m stringhe nella 
+lista contengano il carattere specificato esattamente k volte, False 
+altrimenti.
+
+Es:
+    ex13(["casa", "barca", "albero"], "a", 2, 2)  =>  True
 """
 
 # @trace
-def ex13(l, v, k):
+def ex13(lista_stringhe, carattere, k, m):
     pass
     
 
-# ex13.trace(["v", 3, "v", True, "v"])
-print(ex13(["v", 3, "v", True, "v"], 2, "v"))
+# ex13.trace(["casa", "barca", "albero"], "a", 2, 2)
+print(ex13(["casa", "barca", "albero"], "a", 2, 2))
 
 
 #%% es_14
 """
-Scrivere una funzione ricorsiva che data una lista di interi restituisce la 
-lista ordinata dall’elemento più piccolo a quello più grande.
+Si definisca una funzione ricorsiva che, data una lista di interi l, e intero x, 
+verifica che la lista goda della seguente proprietà:
+
+    Per ogni intero i < len(l)/2: 
+        l[i] + l[len(l) - i - 1] = x
+    
+Nota: se la lista è di lunghezza dispari, il valore dell'elemento centrale è 
+ininfluente.
 """
 
 # @trace
-def ex14(l):
+def ex14(l, x, i = 0):
     pass
     
 
-# ex14.trace([1, 4, 2, 5, 3, 4])
-print(ex14([1, 4, 2, 5, 3, 4]))
+# ex14.trace([0, 1, 2, 3], 3)
+print(ex14([0, 1, 2, 3], 3))
 
 
 #%% es_15
 """
-Assegnato una lista l di float, scrivere una funzione ricorsiva che calcoli il 
-massimo valore tra la somma di ogni elemento con il successivo (escluso l’ultimo)
+Si definisca una funzione ricorsiva che, data una lista, un valore v (tipo 
+non definito) e un intero k, restituisca True se v è presente in tutte le 
+posizioni della lista il cui indice è multiplo di k, False altrimenti.
 """
 
 # @trace
-def ex15(l):
+def ex15(lista, v, k):
     pass
     
 
-# ex15.trace([5.1, 7.2, 3.5, 2.4])
-print(ex15([5.1, 7.2, 3.5, 2.4]))
+# ex15.trace(["v", 3, "v", True, "v"])
+print(ex15(["v", 3, "v", True, "v"], 2, "v"))
 
 
 #%% es_16
 """
-Assegnata una stringa S ed un carattere c, scrivere una funzione ricorsiva che 
-calcoli le occorrenze di c in S
+Scrivere una funzione ricorsiva che data una lista di interi restituisca la 
+lista ordinata dall'elemento più piccolo a quello più grande.
+(Ovviamente non è valido l'utilizzo di sort o sorted)
 """
 
 # @trace
-def ex16(s, c):
+def ex16(lista_interi):
     pass
     
 
-# ex16.trace("trentatre trentini", "t")
-print(ex16("trentatre trentini", "t"))
+# ex16.trace([1, 4, 2, 5, 3, 4])
+print(ex16([1, 4, 2, 5, 3, 4]))
 
 
 #%% es_17
+"""
+Assegnata una lista di caratteri, scrivere una funzione ricorsiva che ritorni
+il massimo valore tra le somme di ogni valore ascii con il successivo.
+Es:
+    ex17(['b', 'A', 'l', '2', '!'])  =>  173
+    
+    'b' + 'A' = 98 + 65 = 163
+    'A' + 'l' = 65 + 108 = 173   --> MAX
+    'l' + '2' = 108 + 50 = 158
+    '2' + '!' = 50 + 33 = 83
+    
+"""
+
+# @trace
+def ex17(lista_caratteri):
+    pass
+
+# ex17.trace(['b', 'A', 'l', '2', '!'])
+print(ex17(['b', 'A', 'l', '2', '!']))
+
+
+#%% es_18
+"""
+Assegnata una stringa ed un carattere, scrivere una funzione ricorsiva che 
+calcoli le occorrenze del carattere nella stringa.
+"""
+
+# @trace
+def ex18(stringa, carattere):
+    pass
+    
+
+# ex18.trace("trentatre trentini", "t")
+print(ex18("trentatre trentini", "t"))
+
+
+#%% es_19
 """
 Sia assegnato una lista l di interi. Scrivere una funzione ricorsiva che 
 calcoli il massimo valore degli elementi di l.
 """
 
 # @trace
-def ex17(l):
+def ex19(l):
     pass
 
     
 
-# ex17.trace([4, -7, 15, -1, 32, 0])
-print(ex17([4, -7, 15, -1, 32, 0]))
+# ex19.trace([4, -7, 15, -1, 32, 0])
+print(ex19([4, -7, 15, -1, 32, 0]))
 
 
-#%% es_18
+#%% es_20
 """
 Definire una funzione ricorsiva che data una stringa s resituisce vero se la 
 stringa e composta dallo stesso numero di caratteri numerici e alfabetici 
@@ -297,53 +341,53 @@ falso altrimenti
 """
 
 # @trace
-def ex18(s): # senza contatori
+def ex20(s): # senza contatori
     pass
 
 # ex18.trace("a2bct45m23")
-print(ex18("a2bct45m23"))
+print(ex20("a2bct45m23"))
 
 
-#%% es_19
+#%% es_21
 """
 Scrivere una funzione ricorsiva che, assegnati due interi N1 ed N2, restituisca 
 la somma di tutti gli interi strettamente compresi tra N1 ed N2
 """
 
 # @trace
-def ex19(n1, n2):
+def ex21(n1, n2):
     pass
     
 
-# ex19.trace(5, 10)
-print(ex19(5, 10))
+# ex21.trace(5, 10)
+print(ex21(5, 10))
 
 
-#%% es_20
+#%% es_22
 """
 Scrivere e una funzione ricorsiva che stampi il contenuto di una lista.
 """
 
 # @trace
-def ex20(l):
+def ex22(l):
     pass
     
 
-# ex20.trace("[1, "x", True, [3, 4]")
-print(ex20([1, "x", True, [3, 4]]))
+# ex22.trace("[1, "x", True, [3, 4]")
+print(ex22([1, "x", True, [3, 4]]))
 
 
-#%% es_21
+#%% es_23
 """
 Definire una funzione ricorsiva che data una stringa restituisca ogni elemento 
-delle stringa diviso dagli altri da uno spazio. Es. ‘abcd’ diventa ‘a b c b’.
+delle stringa diviso dagli altri da uno spazio. Es. "abcd" diventa "a b c b".
 """
 
 # @trace
-def ex21(s):
+def ex23(s):
     pass
     
 
-# ex21.trace("abcd")
-print(ex21("abcd"))
+# ex23.trace("abcd")
+print(ex23("abcd"))
 
