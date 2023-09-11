@@ -8,9 +8,6 @@ carattere alfabetico; falso altrimenti.
 # @trace
 def ex1(stringa):
     pass
-    
-    
-    
         
 
 # ex1.trace("3d4f2g")
@@ -319,12 +316,12 @@ print(ex18("trentatre trentini", "t"))
 
 #%% es_19
 """
-Sia assegnato una lista l di interi. Scrivere una funzione ricorsiva che 
-calcoli il massimo valore degli elementi di l.
+Sia assegnato una lista di interi. Scrivere una funzione ricorsiva che 
+trovi il massimo valore tra gli interi della lista.
 """
 
 # @trace
-def ex19(l):
+def ex19(lista_interi):
     pass
 
     
@@ -335,13 +332,13 @@ print(ex19([4, -7, 15, -1, 32, 0]))
 
 #%% es_20
 """
-Definire una funzione ricorsiva che data una stringa s resituisce vero se la 
-stringa e composta dallo stesso numero di caratteri numerici e alfabetici 
+Definire una funzione ricorsiva che data una stringa resituisca vero se la 
+stringa è composta dallo stesso numero di caratteri numerici e alfabetici 
 falso altrimenti
 """
 
 # @trace
-def ex20(s): # senza contatori
+def ex20(stringa): # senza contatori
     pass
 
 # ex18.trace("a2bct45m23")
@@ -350,8 +347,8 @@ print(ex20("a2bct45m23"))
 
 #%% es_21
 """
-Scrivere una funzione ricorsiva che, assegnati due interi N1 ed N2, restituisca 
-la somma di tutti gli interi strettamente compresi tra N1 ed N2
+Scrivere una funzione ricorsiva che, assegnati due interi n1 ed n2, restituisca 
+la somma di tutti gli interi strettamente compresi tra n1 ed n2
 """
 
 # @trace
@@ -369,7 +366,7 @@ Scrivere e una funzione ricorsiva che stampi il contenuto di una lista.
 """
 
 # @trace
-def ex22(l):
+def ex22(lista):
     pass
     
 
@@ -380,11 +377,14 @@ print(ex22([1, "x", True, [3, 4]]))
 #%% es_23
 """
 Definire una funzione ricorsiva che data una stringa restituisca ogni elemento 
-delle stringa diviso dagli altri da uno spazio. Es. "abcd" diventa "a b c b".
+delle stringa diviso dagli altri da uno spazio. 
+
+Es:
+    ex23("abcd")  =>  "a b c b"
 """
 
 # @trace
-def ex23(s):
+def ex23(stringa):
     pass
     
 
