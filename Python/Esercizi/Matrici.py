@@ -1,8 +1,9 @@
 """
 Autor: Rurik
 
-Ricordiamo che per matrice si intende un array bidimensionale (array di array) contenente, in ciascun sotto-array, qualsiasi tipo di valore. In python le rappresentiamo come
-liste di liste.
+Ricordiamo che per matrice si intende un array bidimensionale (array di array) 
+contenente, in ciascun sotto-array, qualsiasi tipo di valore. In python le 
+rappresentiamo come liste di liste.
 
 Conoscenze richieste:
     - Manipolazione delle strutture dati
@@ -13,8 +14,9 @@ Conoscenze richieste:
 
 #%%
 """ ES 0 - banale
-Si definisca una funzione che dati in input un valore h, un valore l e un carattere alfanumerico x, ritorni una matrice bidimensionale di altezza
-h, larghezza l e composta da soli caratteri k.
+Si definisca una funzione che dati in input un valore h, un valore l e un carattere 
+alfanumerico x, ritorni una matrice bidimensionale di altezza h, larghezza l e 
+composta da soli caratteri k.
 """
 
 def es0(h, l, k):
@@ -178,29 +180,3 @@ def es6(matrice):
 #            [-2,  4,  7,  4,  8, -8,  9]]))      #        [41, 43, 39, 32, 28, 20, 28]] , 10
 
 
-
-
-#%%
-"""ES 7 - difficile
-Progettiamo il nostro primo gioco sulle matrici!
-La nostra funzione questa volta non riceverà parametri in input e non ritornerà nulla, si svolgerà tutto interamente sul terminale.
-Il gioco si svolgerà su una matrice 11x11 dove ogni valore sarà equivalente ad un under score '_'. Il nostro personaggio (PG), rappresentato dal carattere '@' partirà in posizione 5,5 
-(al centro della matrice) e potrà spostarsi dentro di essa tramite i classici comandi WASD. Quando il PG attraversa un bordo della matrice, riappare dall'altra parte (effetto PAC-MAN).
-Al disopra della matrice (o dovunque preferiate) dovrà esserci un contatore delle vite del personaggio e un contatore dei punti.
-All'interno dell matrice saranno presenti dei nemici, rappresentati con il carattere '#' che ad od ogni turno si sposteranno in una casella casuale adiacente (non in diagonale).
-Se un nemico entra a contatto con il  nostro PG, si trovano quindi sulla stessa casella, il PG  perderà una vita.
-L'obbiettivo del PG è quello di raccogliere punti '+' in giro per la matrice. I punti appariranno sempre in posizioni casuali diverse da quelle del PG e dei nemici (che andranno 
-aumentando ogni volta che il punto cambia posizione, comparendo in caselle casuali diverse da quella del PG, di altri NPC e del punto). Anche i nemici posono prendere i punti 
-'+', facendo apparire altri nemici (che inoltre si incrementeranno di uno ogni n punti presi dal giocatore(n è un valore a vostra scelta)).
-Il gioco va in GAME OVER quando il PG perde tutte e 3 le sue vite.
-
-Per lo svolgimento di questo esercizio consiglio di usare copiare la traccia su uno script vuoto, strutturando il programma su più funzioni con ruoli ben precisi. 
-L'esercizio può essere svolto anche utilizzando la programmazione ad oggetti.
-"""
-import random
-
-def main():
-    #inserisci qui il tuo codice
-    pass
-
-# main()
