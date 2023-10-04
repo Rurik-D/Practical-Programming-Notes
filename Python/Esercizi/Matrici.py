@@ -32,11 +32,15 @@ def es0(h, l, k):
 
 #%%
 """ ES 1 - facile
-Riutilizzando il codice dell'esercizio precedente, definire una funzione che data in input una lista di tuple, dove ogni tupla contiene una 3 valori
-tali che 0 <= lista[0] < l, 0 <= lista[1] < h (rappresentanti coordinate xy) e lista[2] = carattere, modifichi e ritorni una matrice di caratteri 
-alfanumerici (definire a piacimento i caratteri h, l, x della funzione precedente).
-La matrice ritornata deve avere nelle coordinate (lista[0][0], lista[0][1]) il carattere lista[0][3]. 
-Nel caso in cui una tupla cerchi di modificare un punto fuori dalla matrice, la tupla in questione va ignorata.
+Riutilizzando il codice dell'esercizio precedente, definire una funzione che 
+data in input una lista di tuple, dove ogni tupla contiene una 3 valori tali 
+che 0 <= lista[0] < l, 0 <= lista[1] < h (rappresentanti coordinate xy) e 
+lista[2] = carattere, modifichi e ritorni una matrice di caratteri alfanumerici 
+(definire a piacimento i caratteri h, l, x della funzione precedente).
+La matrice ritornata deve avere nelle coordinate (lista[0][0], lista[0][1]) il 
+carattere lista[0][3]. 
+Nel caso in cui una tupla cerchi di modificare un punto fuori dalla matrice, la 
+tupla in questione va ignorata.
 """
 
 def es1(lista):
@@ -79,7 +83,8 @@ def es2(matrice):
 
 #%%
 """ ES 3 - medio/facile
-Date 2 matrici 4x4 di interi, sommare i valori con stesse coordinate e salvare i risultati in una matrice 8x2 da ritornare.
+Date 2 matrici 4x4 di interi, sommare i valori con stesse coordinate e salvare 
+i risultati in una matrice 8x2 da ritornare.
 """
 def es3(matrice1, matrice2):
     #inserisci qui il tuo codice
@@ -103,15 +108,19 @@ def es3(matrice1, matrice2):
 #%%
 """ ES 4 - medio/facile
 Riprendendo il codice dell'es 1, implementare la seguente funzionalità opzionale:
-    Le tuple possono contenere un quarto valore 'origine' che indichi il punto di origine della matrice, che di default è in alto a sinistra.
+    Le tuple possono contenere un quarto valore 'origine' che indichi il punto 
+    di origine della matrice, che di default è in alto a sinistra.
     Questo parametro può essere solo uno di tra 4:
         - UL    'UP-LEFT'
         - UR    'UP-RIGHT'
         - DL    'DOWN-LEFT'
         - DR    'DOWN-RIGHT'
-    Se il parametro non è presente viene contato l'ultimo quarto valore presente in una tupla precedente (se il valore di origine non è stato alterato
-    lo si consideri UL). Se viene passato un valore origine non pertinente la tupla non va considerata.
-    Nella lista d'esempio, la terza tupla va ignorata, di consequenza anche il la modifica dell'origine va ignorata.
+    Se il parametro non è presente viene contato l'ultimo quarto valore presente 
+    in una tupla precedente (se il valore di origine non è stato alterato
+    lo si consideri UL). Se viene passato un valore origine non pertinente la 
+    tupla non va considerata.
+    Nella lista d'esempio, la terza tupla va ignorata, di consequenza anche il 
+    la modifica dell'origine va ignorata.
 """
 
 def es4(lista):
@@ -131,19 +140,23 @@ def es4(lista):
 
 #%%
 """ ES 5 - medio
-Data in input una matrice di '-', scrivere una funzione che, tramite un ciclo while, consenta di modificare singolarmente ogni elemento della matrice in un
-elemento dato in input (eseguendo una stampa a video della matrice ad ogni iterazione). Tramite terminale bisognerà poter scrivere le coordinate e l'elemento 
-nel quale modificare il '-'. Se si tenterà di modificare un elemento già modificato, verrà invece modificato il primo elemento successivo non modificato 
-(spostandosi quindi verso destra nella matrice). Se tutti gli elementi sono già stati modificati si mandi un messaggio di errore e si chiuda il programma.
+Data in input una matrice di '-', scrivere una funzione che, tramite un ciclo 
+while, consenta di modificare singolarmente ogni elemento della matrice in un
+elemento dato in input (eseguendo una stampa a video della matrice ad ogni 
+iterazione). Tramite terminale bisognerà poter scrivere le coordinate e l'elemento 
+nel quale modificare il '-'. Se si tenterà di modificare un elemento già modificato, 
+verrà invece modificato il primo elemento successivo non modificato (spostandosi 
+quindi verso destra nella matrice). Se tutti gli elementi sono già stati modificati 
+si mandi un messaggio di errore e si chiuda il programma.
 Gestire tutti i possibili errori che potrebbero generarsi.
 (impostare subito una condizione di uscita dal while, per evitare di creare un ciclo infinito)
 
 Esempio:
 
-    Input:                 -
-        coordintate = 2, 0  | -> 9 volte
-        nuovo valore = X    |
-                           -
+    Input:
+        coordintate = 2, 0
+        nuovo valore = X
+
 
     Output:
         - - -   - - X   - - X   - - X   - - X   - - X   - - X   - - X   X - X   X X X   
@@ -163,8 +176,10 @@ def es5(matrice):
 
 #%%
 """ ES 6 - medio
-Data in input una matrice, si sommi ogni elemento con il precedente, seguendo una spirale che parte dall'origine e gira in senso orario. Si ritorni la matrice modificata e il 
-valore che, lungo la spirale, è stato calcolato più di frequente, in caso di parità si ritorni il valore maggiore.
+Data in input una matrice, si sommi ogni elemento con il precedente, seguendo 
+una spirale che parte dall'origine e gira in senso orario. Si ritorni la matrice 
+modificata e il valore che, lungo la spirale, è stato calcolato più di frequente, 
+in caso di parità si ritorni il valore maggiore.
 """
 
 def es6(matrice):

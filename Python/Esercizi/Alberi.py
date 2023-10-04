@@ -202,7 +202,7 @@ print(ex7(tree, 'h'))
 
 #%% es_8
 """
-Esame fondamenti di programmazione 20 giugno 23:
+Esame fondamenti di programmazione 20 giugno 2023:
     Dato un albero binario composto da nodi aventi per chiave degli interi, si
     trasformi l'albero in modo tale che ogni figlio sinistro sia minore del figlio
     destro; se questa proprietà non viene rispettata bisogna scambiare la posizione
@@ -251,6 +251,51 @@ print(ex8(tree))
 
 #%% es_9
 """
+Esame fondamenti di programmazione 26 gennaio 2023:
+    Si definisca una funzione che riceve in ingresso la radice di un albero binario;
+    la funzione deve restituire la somma di tutti i valori associati ai nodi che
+    sono ad un livello pari nell'albero con radice, e sottraendo tutti i
+    valori associati ai nodi ad un livello dispari. 
+    La radice si assume a livello 0.
+
+Esempio:
+
+        ______5______                        ______2______
+       |             |                      |             |
+       8__        ___2___                __ 7__        ___5___
+          |      |       |              |      |      |       |
+          3      9       1             _4_     3_    _0_     _5_
+                                      |   |      |  |   |   |   |
+                                      2   -1     1  8   3   2   9
+
+         OUTPUT = 8                         OUTPUT = -22
+"""
+
+
+def ex9(tree):
+    # Inserire qui il proprio codice
+    pass
+
+tree = [2,
+          [7,
+            [4, 
+              [2, None, None], 
+              [-1, None, None]],
+            [3, None, 
+              [1, None, None]]],
+          [5,         
+            [0,
+              [8, None, None]
+              [3, None, None]],
+            [5, 
+              [2, None, None], 
+              [9, None, None]]]]
+
+tree = albero.AlberoBinario.fromList(tree)
+print(ex9(tree))
+
+#%% es_10
+"""
 Esame introduzione agli algoritmi 27 giugno 2022:
     Dato un albero binario di ricerca (ovvero un albero dove ogni sottoalbero
     sinistro ha valori più bassi del nodo padre, e ogni sottoalbero destro ha
@@ -269,7 +314,7 @@ Esame introduzione agli algoritmi 27 giugno 2022:
 
 import albero
 
-def ex9(tree):
+def ex10(tree):
     pass
 
 tree = [10,                          #           10
@@ -282,5 +327,5 @@ tree = [10,                          #           10
            [20, None, None]]]
 
 tree = albero.AlberoBinario.fromList(tree)
-print(ex9(tree))
+print(ex10(tree))
 
