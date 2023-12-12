@@ -29,28 +29,36 @@ def es0(lista):
 
 #%%
 """ ES 1 - facile
-Scrivere una funzione che sommi i valori pari di una lista se il loro valore assoluto elevato alla 3, fratto 2 sia multiplo di 3.
+Scrivere una funzione che sommi i valori pari di una lista se il loro valore assoluto 
+elevato alla 3, fratto 2 sia multiplo di 3.
 """
 
 def es1(lista):
-    #Inserisci qui il tuo codice
-    pass
+    return sum(filter(lambda x: (abs(x) ** 3 / 2) % 3 == 0, lista))
 
-# print(es1([2, 5, 7, 8, 4, 12, 6]))      # OUT: 18
+print(es1([2, 5, 7, 8, 4, 12, 6]))      # OUT: 18
 
 
 
 #%%
 """ ES 2 - facile
-Scrivere una funzione che prenda in input una lista di stringhe e restituisca una nuova lista contenente solo le stringhe palindrome della lista iniziale.
+Scrivere una funzione che prenda in input una lista di stringhe e restituisca una 
+nuova lista contenente solo le stringhe palindrome della lista iniziale.
 (non sono considerati spazi, punteggiature e differenza tra maiuscole e minuscole)
 """
 
-def es2(lista):
-    #Inserisci qui il tuo codice
-    pass
+"""
+import string
 
-# print(es2(["abba", "luna", "Erano usi suonare.", "a bCcBa", "oggi"]))            # OUT: ['abba', 'Erano usi suonare.', 'a bCcBa']
+string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+"""
+
+def es2(lista):
+    return list(filter(lambda stringa: stringa.lower().translate(str.maketrans('', '', ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~')) == stringa.lower().translate(str.maketrans('', '', ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'))[::-1], lista))
+
+print(es2(["abba", "luna", "Erano usi suonare.", "a bCcBa", "oggi"]))
+# OUT: ['abba', 'Erano usi suonare.', 'a bCcBa']
 
 
 

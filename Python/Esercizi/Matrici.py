@@ -33,7 +33,7 @@ def es0(h, l, k):
 #%%
 """ ES 1 - facile
 Riutilizzando il codice dell'esercizio precedente, definire una funzione che 
-data in input una lista di tuple, dove ogni tupla contiene una 3 valori tali 
+data in input una lista di tuple, dove ogni tupla contiene 3 valori tali 
 che 0 <= lista[0] < l, 0 <= lista[1] < h (rappresentanti coordinate xy) e 
 lista[2] = carattere, modifichi e ritorni una matrice di caratteri alfanumerici 
 (definire a piacimento i caratteri h, l, x della funzione precedente).
